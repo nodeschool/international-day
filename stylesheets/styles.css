@@ -1,10 +1,11 @@
-@import url(https://fonts.googleapis.com/css?family=Lato:300italic,700italic,300,700);
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700);
 
 body {
   padding:50px;
-  font:14px/1.5 Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font:14px/1.5 Source Sans Pro, "Helvetica Neue", Helvetica, Arial, sans-serif;
   color:#777;
   font-weight:300;
+  background: url('../bg.png');
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -96,9 +97,37 @@ img {
 }
 
 header {
-  width:270px;
-  float:left;
-  position:fixed;
+  width: 500px;
+  margin: 0 auto;
+  text-align: center;
+  color: rgb(51, 51, 51);
+}
+
+header .title {
+  font-size: 50px;
+  font-weight: 900;
+}
+
+header .subtitle {
+  font-size: 60px;
+  font-weight: 900;
+}
+
+header .details {
+  font-size: 50px;
+  font-style: italic;
+}
+
+section.content {
+  margin: 50px 10%;
+  font-size: 16px;
+}
+
+section img {
+  width: 50%;
+  float: left;
+  margin-right: 50px;
+  margin-bottom: 50px;
 }
 
 header ul {
@@ -160,8 +189,6 @@ header ul a strong {
 }
 
 section {
-  width:500px;
-  float:right;
   padding-bottom:50px;
 }
 
