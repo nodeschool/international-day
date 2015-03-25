@@ -1,0 +1,38 @@
+{
+  "name": "nodeschool-globe",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "wzrd demo.js"
+  },
+  "browserify": {
+    "transform": [
+      "babelify",
+      "glslify"
+    ]
+  },
+  "glslify": {
+    "transform": [
+      "glslify-hex"
+    ]
+  },
+  "dependencies": {
+    "babelify": "^5.0.4",
+    "canvas-fit": "^1.2.0",
+    "earth-triangulated": "^1.0.2",
+    "gl-buffer": "^2.1.1",
+    "gl-context": "^0.1.1",
+    "gl-geometry": "^1.0.3",
+    "gl-mat4": "^1.1.2",
+    "gl-shader": "^4.0.0",
+    "gl-vao": "^1.2.0",
+    "gl-vec3": "^1.0.3",
+    "glsl-noise": "0.0.0",
+    "glslify": "^2.0.1",
+    "glslify-hex": "^2.0.1",
+    "tabletop": "^1.3.5"
+  },
+  "devDependencies": {
+    "wzrd": "^1.2.1"
+  }
+}
