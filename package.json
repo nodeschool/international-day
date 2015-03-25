@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "wzrd demo.js"
+    "start": "wzrd demo.js:bundle.js",
+    "bundle": "browserify demo.js -o bundle.js"
   },
   "browserify": {
     "transform": [
