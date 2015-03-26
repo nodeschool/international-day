@@ -15,9 +15,9 @@ uniform float time;
 #define GLOBE_COLOR_2 #F2F2F2
 
 void main() {
-  float n = noise(vec2(index * 239.32489032 + 5.0, time * 0.2));
+  float n = noise(vec2(index * 239.32489032 + 5.0, time * 0.5));
 
-  n = pow(n + 0.5 * 0.5, 6.5);
+  n = pow(n + 0.5 * 0.5, 2.5);
 
   tone = GLOBE_COLOR_1 + n * 0.06125;
   vpos = position;
