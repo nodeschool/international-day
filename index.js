@@ -1,6 +1,7 @@
 const earth     = require('earth-triangulated')
 const cartesian = require('./cartesian')
 const Geom      = require('gl-geometry')
+const icosphere = require('icosphere')
 const Shader    = require('gl-shader')
 const glBuffer  = require('gl-buffer')
 const mat4      = require('gl-mat4')
@@ -37,7 +38,7 @@ class Globe {
     this.pointData   = new Float32Array(0)
     this.pointBuffer = null
     this.pointVAO    = null
-    this.distance    = 5
+    this.distance    = 4.5
 
     this.geometry = Geom(gl)
     this.geometry.attr('position', earth.positions)
