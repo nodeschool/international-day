@@ -38,7 +38,7 @@ class Globe {
     this.pointData   = new Float32Array(0)
     this.pointBuffer = null
     this.pointVAO    = null
-    this.distance    = 4.5
+    this.distance    = 4
 
     this.geometry = Geom(gl)
     this.geometry.attr('position', earth.positions)
