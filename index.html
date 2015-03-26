@@ -2,8 +2,121 @@
 <html>
   <head>
     <title>NodeSchool Globe</title>
+    <style media="screen">
+      html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:0 0}
+      body{line-height:1}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}nav
+      ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}a{margin:0;padding:0;font-size:100%;vertical-align:baseline;background:0
+      0}ins{text-decoration:none}ins,mark{background-color:#ff9;color:#000}mark{font-style:italic;font-weight:700}del{text-decoration:line-through}abbr[title],dfn[title]{border-bottom:1px
+      dotted;cursor:help}table{border-collapse:collapse;border-spacing:0}hr{display:block;height:1px;border:0;border-top:1px
+      solid #ccc;margin:1em 0;padding:0}input,select{vertical-align:middle}
+
+      body {
+        font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
+        color: #333333;
+      }
+
+      header {
+        text-align: center;
+        height: 20vh;
+        background: #FFE51F;
+        background-image: url('http://nodeschool.io/images/test-bg.png');
+        background-size: 25%;
+        background-blend-mode: multiply;
+        display: flex;
+        flex-align: center;
+        justify-content: center;
+        flex-direction: column;
+        box-sizing: border-box;
+        padding: 2rem;
+        position: relative;
+        z-index: 8;
+      }
+
+      header h1 {
+        font-size: 2rem;
+        margin-bottom: 0.75rem;
+        text-transform: uppercase;
+      }
+
+      header h2 {
+        font-size: 1.5rem;
+        font-weight: 500;
+      }
+
+      main {
+        position: relative;
+        z-index: 7;
+        background: #F8F8F8;
+        padding: 4rem;
+      }
+
+      main section {
+        margin: 0 auto;
+        max-width: 700px;
+        font-size: 18px;
+      }
+
+      main p {
+        line-height: 1.65em;
+      }
+
+      main p + p {
+        margin-top: 2rem;
+      }
+
+      a {
+        color: #777;
+        text-decoration: none;
+        border-bottom: 1px solid #777;
+      }
+
+      .event-list {
+        position: relative;
+        width: 35vw;
+        box-sizing: border-box;
+        padding: 4rem;
+        list-style-type: none;
+        text-align: left;
+        z-index: 6;
+      }
+
+      .event-list li {
+        margin-bottom: 1.5rem;
+        line-height: 1.35em;
+      }
+
+      canvas {
+        z-index: 5;
+      }
+
+      @media screen and (max-width: 600px) {
+        canvas {
+          display: none;
+        }
+
+        .event-list {
+          left: 0;
+          width: 100%;
+          text-align: center;
+        }
+      }
+    </style>
   </head>
   <body>
+    <header>
+      <h1>NodeSchool International Day</h1>
+      <h2>May 23rd, 2015</h2>
+    </header>
+
+    <main>
+      <section>
+        <p><strong>Save the date!</strong> On May 23rd, 2015 the <a href="http://nodeschool.io/">NodeSchool</a> community will be organizing a day of educational web events around the globe.</p>
+        <p><strong>If you are interested in hosting an event <a href="https://github.com/nodeschool/international-day/issues/8">please let us know here</a></strong>.</p>
+        <p>Other details are still being discussed. Leave feedback and ideas <a href="https://github.com/nodeschool/international-day/issues">in our issue tracker</a>.</p>
+        <p><strong>Interested in attending?</strong> We will providing more details soon, but you can get involved today by checking to see if there is a <a href="http://nodeschool.io/chapters.html">NodeSchool Chapter</a> near you. If you don't see one, maybe you can start a <a href="https://github.com/nodeschool/organizers/">new chapter</a>!</p>
+      </section>
+    </main>
+
     <script charset="utf-8" src="bundle.js"></script>
   </body>
 </html>

@@ -63,12 +63,10 @@ class Globe {
 
     this.eye[0] = Math.sin(this.time * 0.5) * this.distance
     this.eye[1] = Math.cos(this.time * 0.5) * this.distance
-    this.eye[2] = 0
+    this.eye[2] = 1
 
     mat4.lookAt(this.view, this.eye, this.origin, this.up)
     mat4.identity(scratch)
-
-    this.translate[0] = 1.5 * this.width / 1440
 
     mat4.translate(scratch, scratch, this.translate)
     mat4.multiply(this.view, scratch, this.view)
@@ -114,6 +112,9 @@ class Globe {
   draw() {
     const gl   = this.gl
     var shader = this.shaders.surface
+
+    gl.enable(gl.DEPTH_TEST)
+    gl.disable(gl.CULL_FACE)
 
     this.geometry.bind(shader)
     shader.uniforms.view = this.view
