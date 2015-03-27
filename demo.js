@@ -21,7 +21,7 @@ function gotData(data) {
     var date  = new Date(event.startdate)
 
     // 21st-25th May, 2015
-    // if (date.getMonth() !== 4) continue
+    if (date.getMonth() !== 4) continue
     // if (date.getDate() < 21 || date.getDate() > 25) continue
     // if (date.getYear() !== 115) continue
 
