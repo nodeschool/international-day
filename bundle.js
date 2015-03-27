@@ -50,7 +50,7 @@ function gotData(data) {
     var date = new Date(event.startdate);
 
     // 21st-25th May, 2015
-    // if (date.getMonth() !== 4) continue
+    if (date.getMonth() !== 4) continue;
     // if (date.getDate() < 21 || date.getDate() > 25) continue
     // if (date.getYear() !== 115) continue
 
@@ -87,7 +87,7 @@ function render() {
 window.addEventListener("resize", fit(canvas), false);
 canvas.style.position = "fixed";
 
-},{"./":3,"./cartesian":1,"./tabletop":125,"canvas-fit":4,"domify":6,"escape-html":11,"gl-context":25}],3:[function(require,module,exports){
+},{"./":3,"./cartesian":1,"./tabletop":127,"canvas-fit":4,"domify":6,"escape-html":11,"gl-context":25}],3:[function(require,module,exports){
 "use strict";
 
 var _createClass = (function () { function defineProperties(target, props) { for (var key in props) { var prop = props[key]; prop.configurable = true; if (prop.value) prop.writable = true; } Object.defineProperties(target, props); } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
@@ -97,6 +97,7 @@ var _classCallCheck = function (instance, Constructor) { if (!(instance instance
 var earth = require("earth-triangulated");
 var cartesian = require("./cartesian");
 var Geom = require("gl-geometry");
+var icosphere = require("icosphere");
 var Shader = require("gl-shader");
 var glBuffer = require("gl-buffer");
 var mat4 = require("gl-mat4");
@@ -122,7 +123,7 @@ var Globe = (function () {
     this.fov = Math.PI / 4;
 
     this.shaders = {};
-    this.shaders.surface = Shader(gl, "#define GLSLIFY 1\n\nprecision mediump float;\n\nattribute vec3  position;\nattribute float index;\n\nvarying vec3  tone;\nvarying vec3  vpos;\nuniform mat4  proj;\nuniform mat4  view;\nuniform float time;\n\n//\n// Description : Array and textureless GLSL 2D simplex noise function.\n//      Author : Ian McEwan, Ashima Arts.\n//  Maintainer : ijm\n//     Lastmod : 20110822 (ijm)\n//     License : Copyright (C) 2011 Ashima Arts. All rights reserved.\n//               Distributed under the MIT License. See LICENSE file.\n//               https://github.com/ashima/webgl-noise\n//\n\nvec3 mod289_1_0(vec3 x) {\n  return x - floor(x * (1.0 / 289.0)) * 289.0;\n}\n\nvec2 mod289_1_0(vec2 x) {\n  return x - floor(x * (1.0 / 289.0)) * 289.0;\n}\n\nvec3 permute_1_1(vec3 x) {\n  return mod289_1_0(((x*34.0)+1.0)*x);\n}\n\nfloat snoise_1_2(vec2 v)\n  {\n  const vec4 C = vec4(0.211324865405187,  // (3.0-sqrt(3.0))/6.0\n                      0.366025403784439,  // 0.5*(sqrt(3.0)-1.0)\n                     -0.577350269189626,  // -1.0 + 2.0 * C.x\n                      0.024390243902439); // 1.0 / 41.0\n// First corner\n  vec2 i  = floor(v + dot(v, C.yy) );\n  vec2 x0 = v -   i + dot(i, C.xx);\n\n// Other corners\n  vec2 i1;\n  //i1.x = step( x0.y, x0.x ); // x0.x > x0.y ? 1.0 : 0.0\n  //i1.y = 1.0 - i1.x;\n  i1 = (x0.x > x0.y) ? vec2(1.0, 0.0) : vec2(0.0, 1.0);\n  // x0 = x0 - 0.0 + 0.0 * C.xx ;\n  // x1 = x0 - i1 + 1.0 * C.xx ;\n  // x2 = x0 - 1.0 + 2.0 * C.xx ;\n  vec4 x12 = x0.xyxy + C.xxzz;\n  x12.xy -= i1;\n\n// Permutations\n  i = mod289_1_0(i); // Avoid truncation effects in permutation\n  vec3 p = permute_1_1( permute_1_1( i.y + vec3(0.0, i1.y, 1.0 ))\n    + i.x + vec3(0.0, i1.x, 1.0 ));\n\n  vec3 m = max(0.5 - vec3(dot(x0,x0), dot(x12.xy,x12.xy), dot(x12.zw,x12.zw)), 0.0);\n  m = m*m ;\n  m = m*m ;\n\n// Gradients: 41 points uniformly over a line, mapped onto a diamond.\n// The ring size 17*17 = 289 is close to a multiple of 41 (41*7 = 287)\n\n  vec3 x = 2.0 * fract(p * C.www) - 1.0;\n  vec3 h = abs(x) - 0.5;\n  vec3 ox = floor(x + 0.5);\n  vec3 a0 = x - ox;\n\n// Normalise gradients implicitly by scaling m\n// Approximation of: m *= inversesqrt( a0*a0 + h*h );\n  m *= 1.79284291400159 - 0.85373472095314 * ( a0*a0 + h*h );\n\n// Compute final noise value at P\n  vec3 g;\n  g.x  = a0.x  * x0.x  + h.x  * x0.y;\n  g.yz = a0.yz * x12.xz + h.yz * x12.yw;\n  return 130.0 * dot(m, g);\n}\n\n\n\n\n#define GLOBE_COLOR_1 vec3(1.,0.8705882352941177,0.08627450980392157)\n#define GLOBE_COLOR_2 vec3(0.9490196078431372,0.9490196078431372,0.9490196078431372)\n\nvoid main() {\n  float n = snoise_1_2(vec2(index * 239.32489032 + 5.0, time * 0.5));\n\n  n = pow(n + 0.5 * 0.5, 2.5);\n\n  tone = GLOBE_COLOR_1 + n * 0.06125;\n  vpos = position;\n\n  gl_Position = proj * view * vec4(position, 1.0);\n}\n", "#define GLSLIFY 1\n\nprecision mediump float;\n\n#define GLOBE_COLOR vec3(0.4,0.4,0.4)\n#define GLOBE_BACKGROUND vec3(1.,1.,1.)\n\nvarying vec3 tone;\nvarying vec3 vpos;\nuniform vec3 eye;\n\nvoid main() {\n  float diffuse = mix(0.95, 1.025, max(0.0, dot(normalize(vpos), vec3(0, 0, 1))));\n  float rim     = mix(0.0, 0.1, max(0.0, dot(normalize(vpos - eye), normalize(vpos)) + 0.75));\n  vec3  color   = tone;\n\n  color *= clamp(diffuse + rim, 0.9, 1.1);\n\n  if (!gl_FrontFacing) {\n    color = mix(color, GLOBE_BACKGROUND, 0.75);\n  }\n\n  // gamma correction\n  color = pow(clamp(color, 0.0, 1.0), vec3(0.45));\n\n  gl_FragColor = vec4(color, 1);\n}\n");
+    this.shaders.surface = Shader(gl, "#define GLSLIFY 1\n\nprecision mediump float;\n\nattribute vec3  position;\nattribute float index;\n\nvarying vec3  tone;\nvarying vec3  vpos;\nuniform mat4  proj;\nuniform mat4  view;\nuniform float time;\n\n//\n// Description : Array and textureless GLSL 2D simplex noise function.\n//      Author : Ian McEwan, Ashima Arts.\n//  Maintainer : ijm\n//     Lastmod : 20110822 (ijm)\n//     License : Copyright (C) 2011 Ashima Arts. All rights reserved.\n//               Distributed under the MIT License. See LICENSE file.\n//               https://github.com/ashima/webgl-noise\n//\n\nvec3 mod289_1_0(vec3 x) {\n  return x - floor(x * (1.0 / 289.0)) * 289.0;\n}\n\nvec2 mod289_1_0(vec2 x) {\n  return x - floor(x * (1.0 / 289.0)) * 289.0;\n}\n\nvec3 permute_1_1(vec3 x) {\n  return mod289_1_0(((x*34.0)+1.0)*x);\n}\n\nfloat snoise_1_2(vec2 v)\n  {\n  const vec4 C = vec4(0.211324865405187,  // (3.0-sqrt(3.0))/6.0\n                      0.366025403784439,  // 0.5*(sqrt(3.0)-1.0)\n                     -0.577350269189626,  // -1.0 + 2.0 * C.x\n                      0.024390243902439); // 1.0 / 41.0\n// First corner\n  vec2 i  = floor(v + dot(v, C.yy) );\n  vec2 x0 = v -   i + dot(i, C.xx);\n\n// Other corners\n  vec2 i1;\n  //i1.x = step( x0.y, x0.x ); // x0.x > x0.y ? 1.0 : 0.0\n  //i1.y = 1.0 - i1.x;\n  i1 = (x0.x > x0.y) ? vec2(1.0, 0.0) : vec2(0.0, 1.0);\n  // x0 = x0 - 0.0 + 0.0 * C.xx ;\n  // x1 = x0 - i1 + 1.0 * C.xx ;\n  // x2 = x0 - 1.0 + 2.0 * C.xx ;\n  vec4 x12 = x0.xyxy + C.xxzz;\n  x12.xy -= i1;\n\n// Permutations\n  i = mod289_1_0(i); // Avoid truncation effects in permutation\n  vec3 p = permute_1_1( permute_1_1( i.y + vec3(0.0, i1.y, 1.0 ))\n    + i.x + vec3(0.0, i1.x, 1.0 ));\n\n  vec3 m = max(0.5 - vec3(dot(x0,x0), dot(x12.xy,x12.xy), dot(x12.zw,x12.zw)), 0.0);\n  m = m*m ;\n  m = m*m ;\n\n// Gradients: 41 points uniformly over a line, mapped onto a diamond.\n// The ring size 17*17 = 289 is close to a multiple of 41 (41*7 = 287)\n\n  vec3 x = 2.0 * fract(p * C.www) - 1.0;\n  vec3 h = abs(x) - 0.5;\n  vec3 ox = floor(x + 0.5);\n  vec3 a0 = x - ox;\n\n// Normalise gradients implicitly by scaling m\n// Approximation of: m *= inversesqrt( a0*a0 + h*h );\n  m *= 1.79284291400159 - 0.85373472095314 * ( a0*a0 + h*h );\n\n// Compute final noise value at P\n  vec3 g;\n  g.x  = a0.x  * x0.x  + h.x  * x0.y;\n  g.yz = a0.yz * x12.xz + h.yz * x12.yw;\n  return 130.0 * dot(m, g);\n}\n\n\n\n\n#define GLOBE_COLOR_1 vec3(1.,0.8705882352941177,0.08627450980392157)\n#define GLOBE_COLOR_2 vec3(1.,0.38823529411764707,0.3215686274509804)\n\nvoid main() {\n  float n = snoise_1_2(vec2(index * 239.32489032 + 5.0, time * 0.5));\n\n  n = pow(n + 0.5 * 0.5, 2.5);\n\n  tone = GLOBE_COLOR_1 + n * 0.08125;\n  vpos = position;\n\n  gl_Position = proj * view * vec4(position, 1.0);\n}\n", "#define GLSLIFY 1\n\nprecision mediump float;\n\n#define GLOBE_COLOR vec3(0.4,0.4,0.4)\n#define GLOBE_BACKGROUND vec3(1.,1.,1.)\n\nfloat gaussianSpecular_1_0(\n  vec3 lightDirection,\n  vec3 viewDirection,\n  vec3 surfaceNormal,\n  float shininess) {\n  vec3 H = normalize(lightDirection + viewDirection);\n  float theta = acos(dot(H, surfaceNormal));\n  float w = theta / shininess;\n  return exp(-w*w);\n}\n\n\n\nvarying vec3 tone;\nvarying vec3 vpos;\nuniform vec3 eye;\n\nvoid main() {\n  float diffuse = mix(0.95, 1.025, max(0.0, dot(normalize(vpos), vec3(0, 0, 1))));\n  float rim     = mix(0.0, 0.1, max(0.0, dot(normalize(vpos - eye), normalize(vpos)) + 0.75));\n  float spec    = gaussianSpecular_1_0(normalize(vec3(0, 0, 1)), normalize(eye - vpos), normalize(vpos), 0.35) * 0.125;\n  vec3  color   = tone;\n\n  color *= clamp(diffuse + rim, 0.9, 1.1);\n  color += spec;\n\n  if (!gl_FrontFacing) {\n    color = mix(color, GLOBE_BACKGROUND, 0.75);\n  }\n\n  // gamma correction\n  color = pow(clamp(color, 0.0, 1.0), vec3(0.45));\n\n  gl_FragColor = vec4(color, 1);\n}\n");
 
     this.shaders.points = Shader(gl, "#define GLSLIFY 1\n\nprecision mediump float;\n\nattribute vec4 position;\nuniform mat4 proj;\nuniform mat4 view;\n\nvoid main() {\n  gl_PointSize = 5.0;\n  gl_Position = proj * view * vec4(position.xyz * 1.025, 1);\n}\n", "#define GLSLIFY 1\n\nprecision mediump float;\n\nvoid main() {\n  vec2 p = (gl_PointCoord.xy-0.5)*2.0;\n  float a = (1.0 - pow(dot(p, p), 5.0));\n\n  gl_FragColor = vec4(vec3(1.,0.3686274509803922,0.30196078431372547), a);\n}\n");
 
@@ -131,7 +132,7 @@ var Globe = (function () {
     this.pointData = new Float32Array(0);
     this.pointBuffer = null;
     this.pointVAO = null;
-    this.distance = 5;
+    this.distance = 4;
 
     this.geometry = Geom(gl);
     this.geometry.attr("position", earth.positions);
@@ -253,7 +254,7 @@ function expandRanges(ranges, index, size) {
   return output;
 }
 
-},{"./cartesian":1,"earth-triangulated":7,"gl-buffer":12,"gl-geometry":27,"gl-mat4":61,"gl-shader":76,"gl-vao":91,"gl-vec3":103}],4:[function(require,module,exports){
+},{"./cartesian":1,"earth-triangulated":7,"gl-buffer":12,"gl-geometry":27,"gl-mat4":61,"gl-shader":76,"gl-vao":91,"gl-vec3":103,"icosphere":125}],4:[function(require,module,exports){
 var size = require('element-size')
 
 module.exports = fit
@@ -2058,7 +2059,7 @@ function wrappedNDArrayCtor(data, shape, stride, offset) {
 
 module.exports = wrappedNDArrayCtor
 }).call(this,require("buffer").Buffer)
-},{"buffer":126,"iota-array":19}],19:[function(require,module,exports){
+},{"buffer":128,"iota-array":19}],19:[function(require,module,exports){
 "use strict"
 
 function iota(n) {
@@ -2543,7 +2544,7 @@ exports.clearCache = function clearCache() {
   }
 }
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer)
-},{"bit-twiddle":20,"buffer":126,"dup":21}],23:[function(require,module,exports){
+},{"bit-twiddle":20,"buffer":128,"dup":21}],23:[function(require,module,exports){
 // Copyright (C) 2011 Google Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -3525,7 +3526,7 @@ module.exports=require(16)
 module.exports=require(17)
 },{"/Users/hughsk/src/github.com/nodeschool/globe/node_modules/gl-buffer/node_modules/ndarray-ops/node_modules/cwise-compiler/node_modules/uniq/uniq.js":17}],36:[function(require,module,exports){
 module.exports=require(18)
-},{"/Users/hughsk/src/github.com/nodeschool/globe/node_modules/gl-buffer/node_modules/ndarray/ndarray.js":18,"buffer":126,"iota-array":37}],37:[function(require,module,exports){
+},{"/Users/hughsk/src/github.com/nodeschool/globe/node_modules/gl-buffer/node_modules/ndarray/ndarray.js":18,"buffer":128,"iota-array":37}],37:[function(require,module,exports){
 module.exports=require(19)
 },{"/Users/hughsk/src/github.com/nodeschool/globe/node_modules/gl-buffer/node_modules/ndarray/node_modules/iota-array/iota.js":19}],38:[function(require,module,exports){
 module.exports=require(20)
@@ -3533,7 +3534,7 @@ module.exports=require(20)
 module.exports=require(21)
 },{"/Users/hughsk/src/github.com/nodeschool/globe/node_modules/gl-buffer/node_modules/typedarray-pool/node_modules/dup/dup.js":21}],40:[function(require,module,exports){
 module.exports=require(22)
-},{"/Users/hughsk/src/github.com/nodeschool/globe/node_modules/gl-buffer/node_modules/typedarray-pool/pool.js":22,"bit-twiddle":38,"buffer":126,"dup":39}],41:[function(require,module,exports){
+},{"/Users/hughsk/src/github.com/nodeschool/globe/node_modules/gl-buffer/node_modules/typedarray-pool/pool.js":22,"bit-twiddle":38,"buffer":128,"dup":39}],41:[function(require,module,exports){
 module.exports=require(23)
 },{"/Users/hughsk/src/github.com/nodeschool/globe/node_modules/gl-buffer/node_modules/webglew/node_modules/weak-map/weak-map.js":23}],42:[function(require,module,exports){
 module.exports=require(24)
@@ -6561,6 +6562,175 @@ function transformQuat(out, a, q) {
     return out
 }
 },{}],125:[function(require,module,exports){
+var normalize = require('vectors/normalize-nd')
+
+module.exports = icosphere
+
+function icosphere(subdivisions) {
+  subdivisions = +subdivisions|0
+
+  var positions = []
+  var faces = []
+  var t = 0.5 + Math.sqrt(5) / 2
+
+  positions.push([-1, +t,  0])
+  positions.push([+1, +t,  0])
+  positions.push([-1, -t,  0])
+  positions.push([+1, -t,  0])
+
+  positions.push([ 0, -1, +t])
+  positions.push([ 0, +1, +t])
+  positions.push([ 0, -1, -t])
+  positions.push([ 0, +1, -t])
+
+  positions.push([+t,  0, -1])
+  positions.push([+t,  0, +1])
+  positions.push([-t,  0, -1])
+  positions.push([-t,  0, +1])
+
+  faces.push([0, 11, 5])
+  faces.push([0, 5, 1])
+  faces.push([0, 1, 7])
+  faces.push([0, 7, 10])
+  faces.push([0, 10, 11])
+
+  faces.push([1, 5, 9])
+  faces.push([5, 11, 4])
+  faces.push([11, 10, 2])
+  faces.push([10, 7, 6])
+  faces.push([7, 1, 8])
+
+  faces.push([3, 9, 4])
+  faces.push([3, 4, 2])
+  faces.push([3, 2, 6])
+  faces.push([3, 6, 8])
+  faces.push([3, 8, 9])
+
+  faces.push([4, 9, 5])
+  faces.push([2, 4, 11])
+  faces.push([6, 2, 10])
+  faces.push([8, 6, 7])
+  faces.push([9, 8, 1])
+
+  var complex = {
+      cells: faces
+    , positions: positions
+  }
+
+  while (subdivisions-- > 0) {
+    complex = subdivide(complex)
+  }
+
+  positions = complex.positions
+  for (var i = 0; i < positions.length; i++) {
+    normalize(positions[i])
+  }
+
+  return complex
+}
+
+// TODO: work out the second half of loop subdivision
+// and extract this into its own module.
+function subdivide(complex) {
+  var positions = complex.positions
+  var cells = complex.cells
+
+  var newCells = []
+  var newPositions = []
+  var midpoints = {}
+  var f = [0, 1, 2]
+  var l = 0
+
+  for (var i = 0; i < cells.length; i++) {
+    var cell = cells[i]
+    var c0 = cell[0]
+    var c1 = cell[1]
+    var c2 = cell[2]
+    var v0 = positions[c0]
+    var v1 = positions[c1]
+    var v2 = positions[c2]
+
+    var a = getMidpoint(v0, v1)
+    var b = getMidpoint(v1, v2)
+    var c = getMidpoint(v2, v0)
+
+    var ai = newPositions.indexOf(a)
+    if (ai === -1) ai = l++, newPositions.push(a)
+    var bi = newPositions.indexOf(b)
+    if (bi === -1) bi = l++, newPositions.push(b)
+    var ci = newPositions.indexOf(c)
+    if (ci === -1) ci = l++, newPositions.push(c)
+
+    var v0i = newPositions.indexOf(v0)
+    if (v0i === -1) v0i = l++, newPositions.push(v0)
+    var v1i = newPositions.indexOf(v1)
+    if (v1i === -1) v1i = l++, newPositions.push(v1)
+    var v2i = newPositions.indexOf(v2)
+    if (v2i === -1) v2i = l++, newPositions.push(v2)
+
+    newCells.push([v0i, ai, ci])
+    newCells.push([v1i, bi, ai])
+    newCells.push([v2i, ci, bi])
+    newCells.push([ai, bi, ci])
+  }
+
+  return {
+      cells: newCells
+    , positions: newPositions
+  }
+
+  // reuse midpoint vertices between iterations.
+  // Otherwise, there'll be duplicate vertices in the final
+  // mesh, resulting in sharp edges.
+  function getMidpoint(a, b) {
+    var point = midpoint(a, b)
+    var pointKey = pointToKey(point)
+    var cachedPoint = midpoints[pointKey]
+    if (cachedPoint) {
+      return cachedPoint
+    } else {
+      return midpoints[pointKey] = point
+    }
+  }
+
+  function pointToKey(point) {
+    return point[0].toPrecision(6) + ','
+         + point[1].toPrecision(6) + ','
+         + point[2].toPrecision(6)
+  }
+
+  function midpoint(a, b) {
+    return [
+        (a[0] + b[0]) / 2
+      , (a[1] + b[1]) / 2
+      , (a[2] + b[2]) / 2
+    ]
+  }
+}
+
+},{"vectors/normalize-nd":126}],126:[function(require,module,exports){
+module.exports = normalize
+
+function normalize(vec) {
+  var mag = 0
+  for (var n = 0; n < vec.length; n++) {
+    mag += vec[n] * vec[n]
+  }
+  mag = Math.sqrt(mag)
+
+  // avoid dividing by zero
+  if (mag === 0) {
+    return Array.apply(null, new Array(vec.length)).map(Number.prototype.valueOf, 0)
+  }
+
+  for (var n = 0; n < vec.length; n++) {
+    vec[n] /= mag
+  }
+
+  return vec
+}
+
+},{}],127:[function(require,module,exports){
 (function (process){
 "use strict";
 
@@ -7033,7 +7203,7 @@ function transformQuat(out, a, q) {
 })(undefined);
 
 }).call(this,require('_process'))
-},{"_process":130}],126:[function(require,module,exports){
+},{"_process":132}],128:[function(require,module,exports){
 /*!
  * The buffer module from node.js, for the browser.
  *
@@ -8087,7 +8257,7 @@ function decodeUtf8Char (str) {
   }
 }
 
-},{"base64-js":127,"ieee754":128,"is-array":129}],127:[function(require,module,exports){
+},{"base64-js":129,"ieee754":130,"is-array":131}],129:[function(require,module,exports){
 var lookup = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';
 
 ;(function (exports) {
@@ -8209,7 +8379,7 @@ var lookup = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';
 	exports.fromByteArray = uint8ToBase64
 }(typeof exports === 'undefined' ? (this.base64js = {}) : exports))
 
-},{}],128:[function(require,module,exports){
+},{}],130:[function(require,module,exports){
 exports.read = function(buffer, offset, isLE, mLen, nBytes) {
   var e, m,
       eLen = nBytes * 8 - mLen - 1,
@@ -8295,7 +8465,7 @@ exports.write = function(buffer, value, offset, isLE, mLen, nBytes) {
   buffer[offset + i - d] |= s * 128;
 };
 
-},{}],129:[function(require,module,exports){
+},{}],131:[function(require,module,exports){
 
 /**
  * isArray
@@ -8330,7 +8500,7 @@ module.exports = isArray || function (val) {
   return !! val && '[object Array]' == str.call(val);
 };
 
-},{}],130:[function(require,module,exports){
+},{}],132:[function(require,module,exports){
 // shim for using process in browser
 
 var process = module.exports = {};
