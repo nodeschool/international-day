@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "wzrd demo.js:bundle.js",
-    "bundle": "browserify demo.js -o bundle.js"
+    "bundle": "browserify demo.js | uglifyjs -cm > bundle.js"
   },
   "browserify": {
     "transform": [
@@ -41,6 +41,7 @@
   },
   "devDependencies": {
     "browserify": "^9.0.3",
+    "uglify-js": "^2.4.17",
     "wzrd": "^1.2.1"
   }
 }
