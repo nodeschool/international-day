@@ -40,6 +40,7 @@
     "tabletop": "^1.3.5"
   },
   "devDependencies": {
+    "browserify": "^9.0.3",
     "wzrd": "^1.2.1"
   }
 }
