@@ -39,6 +39,8 @@ class Globe {
     this.pointBuffer = null
     this.pointVAO    = null
     this.distance    = 4
+    this.target      = null
+    this.targetIndex = 0
 
     this.geometry = Geom(gl)
     this.geometry.attr('position', earth.positions)
@@ -62,9 +64,15 @@ class Globe {
     this.ratio  = this.width / this.height
     this.time   = (Date.now() - this.start) / 1000
 
-    this.eye[0] = Math.sin(this.time * 0.5) * this.distance
-    this.eye[1] = Math.cos(this.time * 0.5) * this.distance
-    this.eye[2] = 1
+    if (this.target) {
+      this.eye[0] += (this.target[0] - this.eye[0]) * 0.025
+      this.eye[1] += (this.target[1] - this.eye[1]) * 0.025
+      this.eye[2] += (this.target[2] - this.eye[2]) * 0.025
+    } else {
+      this.eye[0] = Math.sin(this.time * 0.5) * this.distance
+      this.eye[1] = Math.cos(this.time * 0.5) * this.distance
+      this.eye[2] = 1
+    }
 
     mat4.lookAt(this.view, this.eye, this.origin, this.up)
     mat4.identity(scratch)
@@ -92,7 +100,7 @@ class Globe {
 
     for (var i = 0, j = 0; i < this.points.length; i++) {
       var point = this.points[i]
-      var coord = cartesian(point.lat, point.lon)
+      var coord = point.coord = cartesian(point.lat, point.lon)
 
       this.pointData[j++] = coord[0]
       this.pointData[j++] = coord[1]
@@ -108,6 +116,8 @@ class Globe {
       buffer: this.pointBuffer
       , size: 4
     }])
+
+    this.pointTo(0)
   }
 
   draw() {
@@ -128,10 +138,11 @@ class Globe {
 
     shader = this.shaders.points
     shader.bind()
-    shader.uniforms.view = this.view
-    shader.uniforms.proj = this.proj
-    shader.uniforms.time = this.time
-    shader.uniforms.eye  = this.eye
+    shader.uniforms.index = this.targetIndex
+    shader.uniforms.view  = this.view
+    shader.uniforms.proj  = this.proj
+    shader.uniforms.time  = this.time
+    shader.uniforms.eye   = this.eye
 
     this.pointVAO.bind()
     gl.enable(gl.BLEND)
@@ -140,6 +151,18 @@ class Globe {
     gl.drawArrays(gl.POINTS, 0, this.pointCount)
     gl.depthMask(true)
     gl.disable(gl.BLEND)
+  }
+
+  pointTo(n) {
+    var meta = this.points[n]
+
+    this.target = meta.coord.slice()
+    this.targetIndex = n
+
+    vec3.normalize(this.target, this.target)
+    this.target[0] *= this.distance
+    this.target[1] *= this.distance
+    this.target[2] *= this.distance
   }
 }
 

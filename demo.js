@@ -1,9 +1,11 @@
 const canvas    = document.body.appendChild(document.createElement('canvas'))
 const gl        = require('gl-context')(canvas, render)
+const findup    = require('findup-element')
 const escape    = require('escape-html')
 const cartesian = require('./cartesian')
 const fit       = require('canvas-fit')
 const tabletop  = require('./tabletop')
+const slice     = require('sliced')
 const domify    = require('domify')
 const globe     = require('./')(gl)
 
@@ -43,9 +45,47 @@ function gotData(data) {
     </li>
   `).join('')
 
-  var events = domify(`<ul class="event-list">${list}</ul>`)
+  document.body.appendChild(domify(`<ul class="event-list">${list}</ul>`))
 
-  document.body.appendChild(events)
+  //
+  // Selecting events on the globe on text hover
+  //
+  var events    = slice(document.querySelectorAll('.event-list li'))
+  var eventList = events[0].parentNode
+  var pEvent    = null
+  var cycling   = true
+  var cIndex    = 0
+
+  eventList.addEventListener('mouseover', function(e) {
+    var el = findup(e.target, el => events.indexOf(el) !== -1)
+    if (!el) return
+
+    var idx = events.indexOf(el)
+    if (idx === -1) return
+
+    selectPoint(idx)
+    cycling = false
+  }, false)
+
+  eventList.addEventListener('mouseleave', function(e) {
+    if (e.target !== eventList) return
+    cycling = true
+  }, false)
+
+  setInterval(function() {
+    if (cycling) {
+      selectPoint((cIndex + 1 + globe.points.length) % globe.points.length)
+    }
+  }, 5000)
+
+  function selectPoint(index) {
+    cIndex = index
+    globe.pointTo(cIndex)
+
+    if (pEvent) pEvent.classList.remove('selected')
+    pEvent = events[cIndex]
+    pEvent.classList.add('selected')
+  }
 }
 
 function render() {
