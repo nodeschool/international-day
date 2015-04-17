@@ -8,5 +8,11 @@ In order for you attendees to appear on the international rollcall, each chapter
 - Take a group photo!
 - If there is anyone in your community with sound/audio/video expertise, ask them to come and interview attendees. Upload your video to youtube afterwards and share it with the nodeschool/organizers repository so we can include it in a NodeSchool International Day short film.
 
+## Stickers
+The [stickers](https://github.com/nodeschool/international-day/tree/2015/Stickers) have been prepared and are ready to send to you printer.  Enjoy!
+
+## Minifilm
+In order to be a part of the mini film, you must take a group photo with your chapter, or record a short "Hello from [you chapter name]" and commit it to [Video](https://github.com/nodeschool/international-day/tree/2015/Video)
+
 ## Your Ideas?
 Suggest more ideas to include on this list in [this thread](https://github.com/nodeschool/international-day/issues/12)
