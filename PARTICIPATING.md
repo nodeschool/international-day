@@ -10,7 +10,7 @@ The participation of each chapter is voluntary, no person has to attend the inte
 - During the time you specified in the event site the owner should be reachable using the given skype account (given during enrollment)
 - If the major language in your country is not english you have to translate the code of conduct and other imporant information to this language.
 
-Note: After enrollment the owner will be added to the [international-day-group ](https://github.com/orgs/nodeschool/teams/international-day). This is to makes sure that you get notified by github in case we mention this group is mentioned somewhere for the coordination.
+Note: After enrollment the owner will be added to the [international-day-group ](https://github.com/orgs/nodeschool/teams/international-day). This is to makes sure that we are able to notify you through github if needed (check your github notifications)
 
 # Suggestions
 
