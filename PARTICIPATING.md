@@ -9,6 +9,7 @@ The participation of each chapter is voluntary, no person has to attend the inte
 - The owner - or a mentor that can take over the responsibility - has to be at the event for the whole specified duration in the event page.
 - During the time you specified in the event site the owner should be reachable using the given skype account (given during enrollment)
 - If the major language in your country is not english you have to translate the code of conduct and other imporant information to this language.
+- Add your logo to the [hexdex](http://nodeschool.io/hexdex.html) so its easier for us to make a nice site
 
 Note: After enrollment the owner will be added to the [international-day-group ](https://github.com/orgs/nodeschool/teams/international-day). This is to makes sure that we are able to notify you through github if needed (check your github notifications)
 
@@ -25,7 +26,7 @@ In order for you attendees to appear on the international rollcall, each chapter
 - If there is anyone in your community with sound/audio/video expertise, ask them to come and interview attendees. Upload your video to youtube afterwards and share it with the nodeschool/organizers repository so we can include it in a NodeSchool International Day short film.
 
 ## Stickers
-The [stickers](https://github.com/nodeschool/international-day/tree/2015/Stickers) have been prepared and are ready to send to you printer.  Enjoy!
+The [stickers](https://github.com/nodeschool/international-day/tree/2015/Stickers) have been prepared and are ready to send to you printer. Enjoy!
 
 ## Minifilm
 In order to be a part of the mini film, you must take a group photo with your chapter, or record a short "Hello from [you chapter name]" and commit it to [Video](https://github.com/nodeschool/international-day/tree/2015/Video)
