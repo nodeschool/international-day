@@ -1,5 +1,9 @@
 Task - @username
 
+## Gathering Statistics
+- Attendance (how many people attended total, and per region/chapter) - @
+- Workshopper/Tutorial downloads - @
+
 ## Mini Film
 - write script - @
 - editing - @
