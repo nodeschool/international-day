@@ -6,4 +6,4 @@ Task - @username
 - update participating with chapter requirements - @
 
 ## Stickers
-- publish the sticker spec so chapters can order - @
+- publish the sticker spec so chapters can order - @finnp (already done!)
