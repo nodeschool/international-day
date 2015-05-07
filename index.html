@@ -1,31 +1,167 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>NodeSchool International Day</title>
+    <title>NodeSchool Globe</title>
+    <style media="screen">
+      html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:0 0}
+      body{line-height:1}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}nav
+      ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}a{margin:0;padding:0;font-size:100%;vertical-align:baseline;background:0
+      0}ins{text-decoration:none}ins,mark{background-color:#ff9;color:#000}mark{font-style:italic;font-weight:700}del{text-decoration:line-through}abbr[title],dfn[title]{border-bottom:1px
+      dotted;cursor:help}table{border-collapse:collapse;border-spacing:0}hr{display:block;height:1px;border:0;border-top:1px
+      solid #ccc;margin:1em 0;padding:0}input,select{vertical-align:middle}
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+      body {
+        font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
+        color: #333333;
+      }
+
+      header {
+        text-align: center;
+        height: 20vh;
+        background: #FFE51F;
+        background-image: url('http://nodeschool.io/images/test-bg.png');
+        background-size: 25%;
+        background-blend-mode: multiply;
+        display: flex;
+        flex-align: center;
+        justify-content: center;
+        flex-direction: column;
+        box-sizing: border-box;
+        padding: 2rem;
+      }
+
+      header h1 {
+        font-size: 2rem;
+        margin-bottom: 0.75rem;
+        text-transform: uppercase;
+      }
+
+      header h2 {
+        font-size: 1.5rem;
+        font-weight: 500;
+      }
+
+      main {
+        position: relative;
+        z-index: 7;
+        background: #F8F8F8;
+        padding: 4rem;
+      }
+
+      main section {
+        margin: 0 auto;
+        max-width: 700px;
+        font-size: 18px;
+      }
+
+      main p {
+        line-height: 1.65em;
+      }
+
+      main p + p {
+        margin-top: 2rem;
+      }
+
+      a {
+        color: #777;
+        text-decoration: none;
+        border-bottom: 1px solid #777;
+      }
+
+      .event-list {
+        position: relative;
+        width: 35vw;
+        box-sizing: border-box;
+        padding: 4rem;
+        list-style-type: none;
+        text-align: left;
+        z-index: 6;
+        min-height: 100vh;
+      }
+
+      .event-list a {
+        text-decoration: none;
+        border-bottom: 0;
+      }
+
+      .event-list li {
+        margin-bottom: 1.5rem;
+        line-height: 1.35em;
+      }
+
+      .event-list li.selected {
+        font-weight: 800;
+        color: #000;
+      }
+			
+			.event-link {
+				font-size: 11px;
+				text-decoration: underline;
+			}
+
+			#international {
+			  border-top: 3px solid black;
+			  background-image: url(images/international-day-bg.jpg);
+			  background-position: center;
+			  background-size: cover;
+			  text-align: center;
+			  padding-bottom: 4em;
+			  text-shadow: 1px 1px 10px #333333;
+        position: relative;
+        z-index: 8;
+			}
+			#international img {
+			  display: block;
+			  margin-left: auto;
+			  margin-right: auto;
+			  width: 20%;
+			  margin-bottom: -1.5em;
+			}
+			#international h3 {
+			  font-size: 3em;
+			  margin-top: 0;
+			  margin-bottom: 0;
+			}
+			#international time {
+			  font-size: 1.5em;
+			  font-weight: 100;
+			}
+			#international h3, time {
+			  color: white;
+			  font-family: Helvetica, Arial, "sans-serif"
+			}
+
+      canvas {
+        z-index: 5;
+      }
+
+      @media screen and (max-width: 600px) {
+        canvas {
+          display: none;
+        }
+
+        .event-list {
+          left: 0;
+          width: 100%;
+          text-align: center;
+        }
+      }
+    </style>
   </head>
   <body>
+		<div role="banner" id="international">
+	    <a href="http://nodeschool.io/"><img src="images/international-day-logo.png" alt="International Day Logo"></a>
+		  <h3 data-i18n="banner-international-day">International Day</h3>
+		  <time datetime="2015-05-23" data-i18n="banner-international-day-date">Saturday, May 23, 2015</time>
+		</div>
 
-    <header>
-      <div class="title">NODESCHOOL</div>
-      <div class="subtitle">International Day</div>
-      <div class="details">May 23rd, 2015</div>
-    </header>   
-
-    <section class="content">
-        <a href="http://nodeschool.io/hexdex"><img src="chapters.png"></a>
-        <p><b>Save the date!</b> On May 23rd, 2015 the <a href="http://nodeschool.io/">NodeSchool</a> community will be organizing a day of educational web events around the globe.</p>
-        <p><b>Enrollment will close on Friday May 8th by 18:00GMT, If you are interested in hosting an event <a href="https://github.com/nodeschool/international-day/issues/8">please let us know here</a></b>.</p>
-        <p>Other details are still being discussed. Leave feedback and ideas <a href="https://github.com/nodeschool/international-day/issues">in our issue tracker</a>.</p>
-        <p><b>Interested in attending?</b> We will providing more details soon, but you can get involved today by checking to see if there is a <a href="http://nodeschool.io/chapters.html">NodeSchool Chapter</a> near you. If you don't see one, maybe you can start a <a href="https://github.com/nodeschool/organizers/">new chapter</a>!</p>
-    </section>
+    <main>
+      <section>
+        <p>On May 23rd, 2015 the <a href="http://nodeschool.io/">NodeSchool</a> community will be organizing a day of educational web events around the globe.</p>
+        <p><strong>Interested in attending?</strong> <a href="http://nodeschool.io/globe/">See the map of all registered international day events</a>, which also provides links to the event sign up pages.</p>
+        <p>Find out more information <a href="https://github.com/nodeschool/international-day/issues">in our issue tracker</a>.</p>
+				<center><img src="chapters.png" width=600 style="margin-top: 50px"></center>
+      </section>
+    </main>
   </body>
 </html>

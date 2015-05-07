@@ -1,0 +1,50 @@
+{
+  "name": "nodeschool-globe",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "wzrd demo.js:bundle.js",
+    "bundle": "browserify demo.js | uglifyjs -cm > bundle.js"
+  },
+  "browserify": {
+    "transform": [
+      "babelify",
+      "glslify"
+    ]
+  },
+  "glslify": {
+    "transform": [
+      "glslify-hex"
+    ]
+  },
+  "dependencies": {
+    "babelify": "^5.0.4",
+    "canvas-fit": "^1.2.0",
+    "concat-stream": "^1.4.8",
+    "csv-parser": "^1.5.2",
+    "domify": "^1.3.2",
+    "earth-triangulated": "^1.0.2",
+    "escape-html": "^1.0.1",
+    "findup-element": "0.0.0",
+    "gl-buffer": "^2.1.1",
+    "gl-context": "^0.1.1",
+    "gl-geometry": "^1.0.3",
+    "gl-mat4": "^1.1.2",
+    "gl-shader": "^4.0.0",
+    "gl-vao": "^1.2.0",
+    "gl-vec3": "^1.0.3",
+    "glsl-noise": "0.0.0",
+    "glsl-specular-gaussian": "^1.0.0",
+    "glslify": "^2.0.1",
+    "glslify-hex": "^2.0.1",
+    "icosphere": "^1.0.0",
+    "nets": "^3.1.0",
+    "sliced": "0.0.5",
+    "tabletop": "^1.3.5"
+  },
+  "devDependencies": {
+    "browserify": "^9.0.3",
+    "uglify-js": "^2.4.17",
+    "wzrd": "^1.2.1"
+  }
+}
