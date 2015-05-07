@@ -1,9 +1,9 @@
-# comments-gh-scraper
+# enrollment-scraper
 
 ## How to run it?
 
 1. `npm install`
-2. `GEOCODER_KEY=YOUR-API-KEY npm run scrape`
+2. `./scrape.sh YOUR-GOOGLE-MAPS-API-KEY`
 
 ## Contributors
 

@@ -201,7 +201,7 @@ function loadEventSignups() {
         path: util.format("/repos/%s/%s/issues/%d/comments?per_page=100", OWNER, REPO, ISSUE),
         method: "GET",
         headers: {
-            "User-Agent": util.format("comments-gh-scraper@%s", settings.version)
+            "User-Agent": util.format("enrollment-scraper@%s", settings.version)
         }
     }, function (response) {
         if (response.statusCode >= 300) {
@@ -233,7 +233,7 @@ function loadComments(events) {
         path: util.format("/repos/%s/%s/issues/%d/comments?per_page=100", OWNER, REPO, ISSUE),
         method: "GET",
         headers: {
-            "User-Agent": util.format("comments-gh-scraper@%s", settings.version)
+            "User-Agent": util.format("enrollment-scraper@%s", settings.version)
         }
     }, function (response) {
         if (response.statusCode >= 300) {
