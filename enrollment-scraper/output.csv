@@ -1,7 +1,3 @@
-
-> enrollment-scraper@0.2.0 scrape /home/afronski/Repositories/nodeschool/international-day/enrollment-scraper
-> node enrollment-scraper.js
-
 city,country,lat,lon,chapter-url,event-url,hex-logo,owner,github,skype,twitter,email
 "Bainbridge Island (WA)","USA","47.6262081","-122.5212448","http://islandjs.org","http://www.meetup.com/IslandJS-Nodeschool/events/222090027/","","Andrew Waterman","awaterma","andrew.waterman","","awaterma@awaterma.net"
 "Belo Horizonte","Brazil","-19.9166813","-43.9344931","http://nodeschool.io/belo-horizonte/","http://even.tc/nodeschool-bh","","Paulo Pires","paulohp","paulo.manguara","","tarallo.php@gmail.com"
