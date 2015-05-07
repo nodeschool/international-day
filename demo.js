@@ -30,7 +30,9 @@ function gotData(events) {
     // if (date.getMonth() !== 4) continue
     // if (date.getDate() < 21 || date.getDate() > 25) continue
     // if (date.getYear() !== 115) continue
-
+		
+		if (!events[i]['event-url']) continue // only allow events with signup page for now
+		
     globe.points.push({
       lat: (events[i].lat  = Number(events[i].lat)),
       lon: (events[i].lon = Number(events[i].lon)),
@@ -45,7 +47,7 @@ function gotData(events) {
     </li>
   `).join('')
 
-  document.body.appendChild(domify(`<ul class="event-list">${list}</ul>`))
+  document.body.appendChild(domify(`<ul class="event-list"><h1 style="margin-bottom: 30px; font-size: 20px;">Find an event near you</h1>${list}</ul>`))
 
   //
   // Selecting events on the globe on text hover
