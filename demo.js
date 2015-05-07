@@ -4,44 +4,44 @@ const findup    = require('findup-element')
 const escape    = require('escape-html')
 const cartesian = require('./cartesian')
 const fit       = require('canvas-fit')
-const tabletop  = require('./tabletop')
 const slice     = require('sliced')
 const domify    = require('domify')
+const nets      = require('nets')
+const csv       = require('csv-parser')
+const concat    = require('concat-stream')
 const globe     = require('./')(gl)
 
-tabletop.init({
-  key: 'https://docs.google.com/spreadsheets/d/1swvC909BzbpToZLePM6whDvmXavaxEG6eT257dVf-bY/pubhtml',
-  callback: gotData
+nets('./events.csv', function (err, resp, body) {
+	if (err) throw err
+	var parser = csv()
+	parser.pipe(concat(gotData))
+	parser.write(body)
+	parser.end()
 })
 
-function gotData(data) {
-  var events    = data[Object.keys(data)[0]].elements
+function gotData(events) {
   var locations = new Float32Array(events.length * 3)
 
   for (var i = 0; i < events.length; i++) {
     var event = events[i]
-    var date  = new Date(event.startdate)
+    // var date  = new Date(event.startdate)
 
     // 21st-25th May, 2015
-    if (date.getMonth() !== 4) continue
+    // if (date.getMonth() !== 4) continue
     // if (date.getDate() < 21 || date.getDate() > 25) continue
     // if (date.getYear() !== 115) continue
 
     globe.points.push({
-      lat: (events[i].latitude  = Number(events[i].latitude)),
-      lon: (events[i].longitude = Number(events[i].longitude)),
-      name: events[i].name,
-      href: events[i].website
+      lat: (events[i].lat  = Number(events[i].lat)),
+      lon: (events[i].lon = Number(events[i].lon)),
+      name: events[i].city,
+      href: events[i]['event-url']
     })
   }
 
-  globe.points.sort(function(a, b) {
-    return (+new Date(a.startdate)) - (+new Date(b.startdate))
-  })
-
   var list = globe.points.map(event => `
     <li>
-      <a target="_blank" href="${escape(event.href)}">${escape(event.name)}</a>
+      ${escape(event.name)} <span class="event-link">(<a target="_blank" href="${escape(event.href)}">event page</a>)</span>
     </li>
   `).join('')
 
