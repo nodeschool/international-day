@@ -135,7 +135,8 @@ function parseEvents(events) {
     var result = {};
 
     events.forEach(function (event) {
-        var res = /^\s*([^:]+)\s*\:\s*(.*)\s*$/g.exec(event.body);
+        var body = event.body.split("\n")[0]
+        var res = /^\s*([^:]+)\s*\:\s*(.*)\s*$/g.exec(body);
         if (res) {
             result[res[1].toLowerCase()] = res[2];
         }
