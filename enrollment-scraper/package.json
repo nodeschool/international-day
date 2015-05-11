@@ -1,0 +1,40 @@
+{
+  "name": "enrollment-scraper",
+  "version": "0.2.0",
+  "description": "Small app for scraping enrollments from issues on Github.",
+  "main": "enrollment-scraper.js",
+  "scripts": {
+    "scrape": "node enrollment-scraper.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:nodeschool/international-day.git"
+  },
+  "keywords": [
+    "github",
+    "nodeschool",
+    "enrollment",
+    "comments",
+    "scraper"
+  ],
+  "author": {
+    "name": "Wojtek Gawroński",
+    "email": "afronski@gmail.com"
+  },
+  "contributors": [
+    {
+      "name": "Martin Heidegger",
+      "email": "martin.heidegger@gmail.com"
+    }
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nodeschool/international-day/issues"
+  },
+  "homepage": "https://github.com/nodeschool/international-day",
+  "dependencies": {
+    "async": "^0.9.0",
+    "concat-stream": "~1.4.8",
+    "node-geocoder": "~2.20.0"
+  }
+}
