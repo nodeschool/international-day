@@ -1,14 +1,29 @@
 # Org Chart
+
+## Lead
+Please contact @iancrowther for any questions or queries you may have.
+
+- Skype: iancrowther1
+- Github: @iancrowther
+- Twitter: @iancrowther
+- Email: ian[at]iancrowther[dot]co[dot]uk
+
+## Timezones
+Please review the (schedule)[https://github.com/nodeschool/international-day/blob/2015/international-nodeschool-schedule.csv] to see which timezone your chapter is assigned too and who is your point of contact on the day.
+
+### Timezones UTC-03:00 ~ UTC-06:00
+TBD
+
+## Timezones UTC-07:00 ~ UTC-10:00
+TBD
+
+## UTC+00:00 ~ UTC+02:00 
+- Skype: iancrowther1
+- Github: @iancrowther
+- Twitter: @iancrowther
+- Email: ian[at]iancrowther[dot]co[dot]uk
+
+## UTC+06:00 ~ UTC+10:00
+- Github: martinheidegger
+
 (TimeZone Map)[http://www.convertit.com/Go/ConvertIt/World_Time/Time_Zones_Map_Large.ASP]
-
-## UTC-12 ~ UTC-6
-@martinheidegger
-martin.heidegger@gmail.com
-
-## UTC-7 ~ UTC+1
-@iancrowther
-ian@iancrowther.co.uk
-
-## UTC+2 ~ UTC+5 
-
-## UTC+6 ~ UTC+11
