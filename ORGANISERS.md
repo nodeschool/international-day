@@ -12,7 +12,8 @@ Please contact @iancrowther for any questions or queries you may have.
 Please review the (schedule)[https://github.com/nodeschool/international-day/blob/2015/international-nodeschool-schedule.csv] to see which timezone your chapter is assigned too and who is your point of contact on the day.
 
 ## Timezones UTC-03:00 ~ UTC-06:00
-###Contact: TBD
+###Contact: Alejandro Oviedo
+- Github: @a0viedo
 
 ## Timezones UTC-07:00 ~ UTC-10:00
 ###Contact: TBD
