@@ -18,7 +18,7 @@ Please review the (schedule)[https://github.com/nodeschool/international-day/blo
 ###Contact: TBD
 
 ## Timezones UTC+00:00 ~ UTC+02:00
-### Contact Ian Crowther 
+### Contact: Ian Crowther 
 - Skype: iancrowther1
 - Github: @iancrowther
 - Twitter: @iancrowther
