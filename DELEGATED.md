@@ -4,7 +4,7 @@ Task - @username
 - Attendance (how many people attended total, and per region/chapter) - @
 - Workshopper/Tutorial downloads - @
 
-## Mini Film
+## Mini Film (Issue #9)
 - write script - @tomfrew
 - editing - @tomfrew
 - defining chapter spec - @
