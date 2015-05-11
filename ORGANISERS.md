@@ -14,6 +14,9 @@ Please review the (schedule)[https://github.com/nodeschool/international-day/blo
 ##Alejandro Oviedo
 ### Timezones UTC-03:00 ~ UTC-06:00
 - Github: @a0viedo
+- Skype: alejandro.og
+- Twitter: @a0viedo
+- Email: alejandro.oviedo.g[at]gmail[dot]com
 
 ##TBD
 ### Timezones UTC-07:00 ~ UTC-10:00
