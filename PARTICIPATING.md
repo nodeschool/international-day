@@ -32,7 +32,7 @@ The [stickers](https://github.com/nodeschool/international-day/tree/2015/Sticker
 In order to be a part of the mini film, you must take a group photo with your chapter, or record a short "Hello from [you chapter name]" and commit it to [Video](https://github.com/nodeschool/international-day/tree/2015/Video)
 
 ## Social Media
-Incentivate your attendants to tweet, post pictures and small videos to Instagram with the hashtag #nodeschool. We could then use this on the minifilm.
+Encourage your attendants to tweet, post pictures and small videos to Instagram with the hashtag #nodeschool. We could then use this on the minifilm.
 
 ## Your Ideas?
 Suggest more ideas to include on this list in [this thread](https://github.com/nodeschool/international-day/issues/12)
