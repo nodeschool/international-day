@@ -12,7 +12,7 @@ const fit       = require('canvas-fit')
 const canvas    = document.createElement('canvas')
 const gl        = require('gl-context')(canvas, render)
 
-document.body.insertBefore(canvas, document.getElementById('globe-container'))
+document.body.appendChild(canvas)
 
 const scratch = new Float32Array(16)
 class Globe {
@@ -196,3 +196,4 @@ function render() {
 
 window.globe = new Globe(gl);
 window.addEventListener('resize', fit(canvas), false)
+canvas.style.position = 'fixed'
