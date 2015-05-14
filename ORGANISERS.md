@@ -9,7 +9,7 @@ Please contact @iancrowther for any questions or queries you may have.
 - Email: ian[at]iancrowther[dot]co[dot]uk
 
 ## Timezones
-Please review the (schedule)[https://github.com/nodeschool/international-day/blob/2015/international-nodeschool-schedule.csv] to see which timezone your chapter is assigned too and who is your point of contact on the day.
+Please review the [schedule](https://github.com/nodeschool/international-day/blob/2015/international-nodeschool-schedule.csv) to see which timezone your chapter is assigned too and who is your point of contact on the day.
 
 ##Alejandro Oviedo
 ### Timezones UTC-03:00 ~ UTC-06:00
