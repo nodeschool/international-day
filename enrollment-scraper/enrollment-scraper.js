@@ -76,7 +76,8 @@ function extractInfo(body) {
         if (result.email) {
             result.email = result.email
                 .replace(/\s*\[\s*at\s*\]\s*/ig, "@")
-                .replace(/gmail\s*$/ig, "gmail.com");
+                .replace(/gmail\s*$/ig, "gmail.com")
+                .replace(/\s+/ig, "");
         }
     });
 
@@ -103,7 +104,7 @@ function createChapter(events, comment, callback) {
         var cached = cache[info.name];
 
         info.url = info.chapter || util.format("http://nodeschool.io/%s", info.city.replace(/\s/, "-").toLowerCase());
-        info.event = events[info.name.toLowerCase()] || events[info.city.toLowerCase()];
+        info.event = info.event || events[info.name.toLowerCase()] || events[info.city.toLowerCase()];
 
         if (cached) {
             info.lat = cached.lat;
