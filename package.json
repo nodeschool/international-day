@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "start": "wzrd demo.js:bundle.js",
-    "bundle": "browserify demo.js | uglifyjs -cm > bundle.js"
+    "bundle-index": "browserify demo.js | uglifyjs -cm > index.bundle.js",
+    "bundle-globe": "browserify globe.js | uglifyjs -cm > globe.bundle.js",
+    "bundle": "npm run bundle-index; npm run bundle-globe"
   },
   "browserify": {
     "transform": [

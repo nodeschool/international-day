@@ -8,11 +8,13 @@ const mat4      = require('gl-mat4')
 const vec3      = require('gl-vec3')
 const glslify   = require('glslify')
 const VAO       = require('gl-vao')
+const fit       = require('canvas-fit')
+const canvas    = document.createElement('canvas')
+const gl        = require('gl-context')(canvas, render)
+
+document.body.insertBefore(canvas, document.getElementById('globe-container'))
 
 const scratch = new Float32Array(16)
-
-module.exports = gl => new Globe(gl)
-
 class Globe {
   constructor(gl) {
     this.gl   = gl
@@ -33,8 +35,8 @@ class Globe {
       , glslify('./shaders/points.frag')
     )
 
-    this.points = []
-    this.pointCount  = this.points.length
+    this.points = window.points
+    this.pointCount  = 0
     this.pointData   = new Float32Array(0)
     this.pointBuffer = null
     this.pointVAO    = null
@@ -182,3 +184,15 @@ function expandRanges(ranges, index, size) {
 
   return output
 }
+
+function render() {
+  globe.translate[0] = 1.5 * globe.width / 1440
+  globe.translate[1] = 0
+  globe.tick()
+
+  gl.viewport(0, 0, globe.width, globe.height)
+  globe.draw()
+}
+
+window.globe = new Globe(gl);
+window.addEventListener('resize', fit(canvas), false)

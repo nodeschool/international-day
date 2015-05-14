@@ -1,15 +1,10 @@
-const canvas    = document.body.appendChild(document.createElement('canvas'))
-const gl        = require('gl-context')(canvas, render)
 const findup    = require('findup-element')
 const escape    = require('escape-html')
-const cartesian = require('./cartesian')
-const fit       = require('canvas-fit')
 const slice     = require('sliced')
 const domify    = require('domify')
 const nets      = require('nets')
 const csv       = require('csv-parser')
 const concat    = require('concat-stream')
-const globe     = require('./')(gl)
 
 nets('./events.csv', function (err, resp, body) {
 	if (err) throw err
@@ -21,6 +16,8 @@ nets('./events.csv', function (err, resp, body) {
 
 function gotData(events) {
   var locations = new Float32Array(events.length * 3)
+  var points = [];
+  window.points = points;
 
   for (var i = 0; i < events.length; i++) {
     var event = events[i]
@@ -33,7 +30,7 @@ function gotData(events) {
 		
 		if (!events[i]['event-url']) continue // only allow events with signup page for now
 		
-    globe.points.push({
+    points.push({
       lat: (events[i].lat  = Number(events[i].lat)),
       lon: (events[i].lon = Number(events[i].lon)),
       name: events[i].city,
@@ -41,9 +38,9 @@ function gotData(events) {
     })
   }
 
-  var list = globe.points.map(event => `
+  var list = points.map(event => `
     <li>
-      ${escape(event.name)} <span class="event-link">(<a target="_blank" href="${escape(event.href)}">event page</a>)</span>
+      <a target="_blank" href="${escape(event.href)}">${escape(event.name)}</a></span>
     </li>
   `).join('')
 
@@ -74,30 +71,24 @@ function gotData(events) {
     cycling = true
   }, false)
 
-  setInterval(function() {
-    if (cycling) {
-      selectPoint((cIndex + 1 + globe.points.length) % globe.points.length)
-    }
-  }, 5000)
-
   function selectPoint(index) {
     cIndex = index
-    globe.pointTo(cIndex)
+    if (window.globe) window.globe.pointTo(cIndex)
 
     if (pEvent) pEvent.classList.remove('selected')
     pEvent = events[cIndex]
     pEvent.classList.add('selected')
   }
+
+  setInterval(function() {
+    if (cycling) {
+      selectPoint((cIndex + 1 + points.length) % points.length)
+    }
+  }, 5000)
+
+  var script = document.createElement("script")
+  script.setAttribute("type","text/javascript")
+  script.setAttribute("src", "globe.bundle.js")
+
+  document.getElementsByTagName("head")[0].appendChild(script)
 }
-
-function render() {
-  globe.translate[0] = 1.5 * globe.width / 1440
-  globe.translate[1] = 0
-  globe.tick()
-
-  gl.viewport(0, 0, globe.width, globe.height)
-  globe.draw()
-}
-
-window.addEventListener('resize', fit(canvas), false)
-canvas.style.position = 'fixed'
