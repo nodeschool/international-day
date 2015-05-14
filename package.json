@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "wzrd demo.js:bundle.js",
-    "bundle-index": "browserify demo.js | uglifyjs -cm > index.bundle.js",
+    "start": "wzrd index.js:index.bundle.js globe.js:globe.bundle.js",
+    "bundle-index": "browserify index.js | uglifyjs -cm > index.bundle.js",
     "bundle-globe": "browserify globe.js | uglifyjs -cm > globe.bundle.js",
     "bundle": "npm run bundle-index; npm run bundle-globe"
   },
