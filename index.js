@@ -44,7 +44,7 @@ function gotData(events) {
     </li>
   `).join('')
 
-  document.body.appendChild(domify(`<ul class="event-list"><h1 style="margin-bottom: 30px; font-size: 20px;">Find an event near you</h1>${list}</ul>`))
+  document.getElementById('events').appendChild(domify(`<ul class="event-list"><h1 style="margin-bottom: 30px; font-size: 20px;">Find an event near you</h1>${list}</ul>`))
 
   //
   // Selecting events on the globe on text hover

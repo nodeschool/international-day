@@ -42,14 +42,13 @@
       }
 
       main {
-        position: relative;
         z-index: 7;
-        background: #F8F8F8;
-        padding: 4rem;
+        display: flex;
+        justify-content: space-between;
       }
 
       main section {
-        margin: 0 auto;
+        margin: 0 0;
         max-width: 700px;
         font-size: 18px;
       }
@@ -60,6 +59,26 @@
 
       main p + p {
         margin-top: 2rem;
+      }
+
+      #events {
+        min-width: 10px;
+      }
+
+      #info {
+        z-index: 7;
+        display: flex;
+        justify-content: space-between;
+        align-content: center;
+        flex-direction: column;
+      }
+
+      #intro {
+        position: relative;
+        flex-grow: 0;
+        background-color: rgba(248, 248, 248, 0.8);
+        padding: 64px 64px;
+
       }
 
       a {
@@ -93,12 +112,12 @@
         font-weight: 800;
         color: #000;
       }
-			
+
 			.event-link {
 				font-size: 11px;
 				text-decoration: underline;
 			}
-			
+
 			#international {
 			  border-top: 3px solid black;
 			  background-image: url(images/international-day-bg.jpg);
@@ -155,16 +174,16 @@
 		  <time datetime="2015-05-23" data-i18n="banner-international-day-date">Saturday, May 23, 2015</time>
 		</div>
 
-    <div id="globe-container">
-    </div>
-
-    <!-- <main>
-      <section>
-        <p>On May 23rd, 2015 the <a href="http://nodeschool.io/">NodeSchool</a> community will be organizing a day of educational web events around the globe.</p>
-        <p><strong>Interested in attending?</strong> The map below displays the locations of all the registered international day events, and provides links to the event sign up pages.</p>
-        <p>Find out more information <a href="https://github.com/nodeschool/international-day/issues">in our issue tracker</a>.</p>
+    <main>
+      <section id="events"></section>
+      <section id="info">
+        <div id="intro">
+          <p>On May 23rd, 2015 the <a href="http://nodeschool.io/">NodeSchool</a> community will be organizing a day of educational web events around the globe.</p>
+          <p><strong>Interested in attending?</strong> The map below displays the locations of all the registered international day events, and provides links to the event   sign up pages.</p>
+          <p>Find out more information <a href="https://github.com/nodeschool/international-day/issues">in our issue tracker</a>.</p>
+        </div>
       </section>
-    </main> -->
+    </main>
 
     <script charset="utf-8" type="text/javascript" src="index.bundle.js"></script>
   </body>
