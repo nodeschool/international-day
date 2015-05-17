@@ -1,0 +1,206 @@
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: 0 0
+}
+body {
+  line-height: 1
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block
+}
+nav
+ul {
+  list-style: none
+}
+blockquote, q {
+  quotes: none
+}
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+  content: none
+}
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: 0
+  0
+}
+ins {
+  text-decoration: none
+}
+ins, mark {
+  background-color: #ff9;
+  color: #000
+}
+mark {
+  font-style: italic;
+  font-weight: 700
+}
+del {
+  text-decoration: line-through
+}
+abbr[title], dfn[title] {
+  border-bottom: 1px
+  dotted;
+  cursor: help
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0
+}
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px
+  solid #ccc;
+  margin: 1em 0;
+  padding: 0
+}
+input, select {
+  vertical-align: middle
+}
+body {
+  font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
+  color: #333333;
+}
+header {
+  text-align: center;
+  height: 20vh;
+  background: #FFE51F;
+  background-image: url('http://nodeschool.io/images/test-bg.png');
+  background-size: 25%;
+  background-blend-mode: multiply;
+  display: flex;
+  flex-align: center;
+  justify-content: center;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 2rem;
+}
+header h1 {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+}
+header h2 {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+main {
+  z-index: 7;
+  display: flex;
+  justify-content: space-between;
+}
+main section {
+  margin: 0 0;
+  max-width: 700px;
+  font-size: 18px;
+}
+main p {
+  line-height: 1.65em;
+}
+main p + p {
+  margin-top: 2rem;
+}
+#events {
+  min-width: 10px;
+  order: 1;
+}
+#info {
+  z-index: 7;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  flex-direction: column;
+  order: 2;
+}
+#intro {
+  z-index: 7;
+  position: relative;
+  flex-grow: 0;
+  background-color: rgba(248, 248, 248, 0.8);
+  padding: 64px 64px;
+}
+a {
+  color: #777;
+  text-decoration: none;
+  border-bottom: 1px solid #777;
+}
+.event-list {
+  position: relative;
+  width: 35vw;
+  box-sizing: border-box;
+  padding: 4rem;
+  list-style-type: none;
+  text-align: left;
+  z-index: 6;
+  min-height: 100vh;
+}
+.event-list a {
+  text-decoration: none;
+  border-bottom: 0;
+}
+.event-list li {
+  margin-bottom: 1.5rem;
+  line-height: 1.35em;
+}
+.event-list li.selected {
+  font-weight: 800;
+  color: #000;
+}
+.event-link {
+  font-size: 11px;
+  text-decoration: underline;
+}
+#international {
+  border-top: 3px solid black;
+  background-image: url(images/international-day-bg.jpg);
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+  padding-bottom: 4em;
+  text-shadow: 1px 1px 10px #333333;
+  position: relative;
+  z-index: 8;
+}
+#international img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 20%;
+  margin-bottom: -1.5em;
+}
+#international h3 {
+  font-size: 3em;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+#international time {
+  font-size: 1.5em;
+  font-weight: 100;
+}
+#international h3, time {
+  color: white;
+  font-family: Helvetica, Arial, "sans-serif"
+}
+canvas {
+  z-index: 5;
+}
+@media screen and (max-width:600px) {
+  canvas {
+    display: none;
+  }
+  .event-list {
+    left: 0;
+    width: 100%;
+    text-align: center;
+  }
+}
