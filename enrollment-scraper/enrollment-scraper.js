@@ -3,6 +3,8 @@
 "use strict";
 
 var fs = require("fs");
+var streamToArray = require("stream-to-array"); 
+var csv = require("csv");
 
 var OWNER = "nodeschool";
 var REPO = "international-day";
@@ -87,11 +89,11 @@ function extractInfo(body) {
 function geocode(name, callback) {
     geocoder.geocode(name, function (err, res) {
         if (err || res.length === 0) {
-            callback(err, { lat: 0, lng: 0});
+            callback(err, { lat: 0, lon: 0});
             return;
         }
 
-        callback(err, { lat: res[0].latitude, lng: res[0].longitude });
+        callback(err, { lat: res[0].latitude, lonl: res[0].longitude });
     });
 }
 
@@ -103,26 +105,27 @@ function createChapter(events, comment, callback) {
     } else {
         var cached = cache[info.name];
 
-        info.url = info.chapter || util.format("http://nodeschool.io/%s", info.city.replace(/\s/, "-").toLowerCase());
-        info.event = info.event || events[info.name.toLowerCase()] || events[info.city.toLowerCase()];
+        info["chapter-url"] = info.chapter || util.format("http://nodeschool.io/%s", info.city.replace(/\s/, "-").toLowerCase());
+        info["event-url"] = info.event || events[info.name.toLowerCase()] || events[info.city.toLowerCase()];
+        info["hex-logo"] = info.hexLogo
 
         if (cached) {
             info.lat = cached.lat;
-            info.lng = cached.lng;
+            info.lon = cached.lon;
 
             callback(null, info);
         } else {
             geocode(info.name.toLowerCase(), function (error, geo) {
                 if (error) {
                     info.lat = "";
-                    info.lng = "";
+                    info.lon = "";
                 } else {
                     info.lat = geo.lat;
-                    info.lng = geo.lng;
+                    info.lon = geo.lon;
 
                     cache[info.name] = {
                         lat: geo.lat,
-                        lng: geo.lng
+                        lon: geo.lon
                     };
                 }
 
@@ -152,45 +155,54 @@ function parseComments(events, comments) {
     async.mapLimit(comments, 10, createChapter.bind(null, events), function (err, chapters) {
         fs.writeFileSync(CACHE_FILE_NAME, JSON.stringify(cache));
         chapters = chapters.sort(function (a, b) {
-            if (!a) {
-                return !b ? 0 : 1;
-            }
-
-            if (!b) {
-                return -1;
-            }
-
-            if (a.name > b.name) {
-                return 1;
-            }
-
-            if (b.name > a.name) {
-                return -1;
-            }
-
+            if (!a) return !b ? 0 : 1;
+            if (!b) return -1;
+            if (a.name > b.name) return 1;
+            if (b.name > a.name) return -1;
             return 0;
         });
 
-        console.log("city,country,lat,lon,chapter-url,event-url,hex-logo,owner,github,skype,twitter,email");
-        chapters.forEach(function (object) {
-            if (object) {
-                console.log("\"%s\",\"%s\",\"%d\",\"%d\",\"%s\",\"%s\",\"%s\",\"%s\",\"%s\",\"%s\",\"%s\",\"%s\"",
-                    object.city,
-                    object.country,
-                    object.lat,
-                    object.lng,
-                    object.url || "",
-                    object.event || "",
-                    object.hexLogo || "",
-                    object.owner || "",
-                    object.github || "",
-                    object.skype || "",
-                    object.twitter || "",
-                    object.email || "");
-            }
+        var scheduleStream = fs.createReadStream("./international-nodeschool-schedule.csv");
+        scheduleStream.setEncoding("utf8")
+        scheduleStream = scheduleStream.pipe(csv.parse({columns: true}));
+        streamToArray(scheduleStream, function (err, schedule) {
+            csv.stringify(chapters.filter(function (chapter) {
+                return chapter !== undefined && chapter["event-url"]
+            }).map(function (chapter) {
+                for (var i = 0; i < schedule.length; i++) {
+                    var sched = schedule[i]
+                    if (sched.city === chapter.city && sched.country === chapter.country) {
+                        chapter["end-time"] = sched["end-time"]
+                        chapter["start-time"] = sched["start-time"]
+                        chapter["time-zone"] = sched["time-zone"]
+                        break;
+                    }
+                };
+                return chapter
+            }), { objectMode: true, header: true, columns: [
+                "city",
+                "country",
+                "lat",
+                "lon",
+                "chapter-url",
+                "event-url",
+                "hex-logo",
+                "owner",
+                "github",
+                "skype",
+                "twitter",
+                "email",
+                "start-time",
+                "end-time",
+                "time-zone"
+            ]}, function (err, data) {
+                if (err) {
+                    console.log("Error: ", err)
+                    return process.exit(1)
+                }
+                fs.writeFile('./output.csv', data)
+            });
         });
-
-        process.exit(0);
     });
 }
 
