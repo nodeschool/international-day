@@ -35,7 +35,6 @@ city,country,lat,lon,chapter-url,event-url,hex-logo,owner,github,skype,twitter,e
 "Portland (Oregon)","USA","45.5230622","-122.6764816","http://nodeschool.io/pdx","http://calagator.org/events/1250468498","","Max Ogden","maxogden","","","mogden@gmail.com"
 "Provo (Utah)","USA","40.2338438","-111.6585337","http://nodeschool.io/provo","http://meetu.ps/2J6W23","","Michael A. Jackson","majgis","","","majgis@gmail.com"
 "Reno (Nevada)","USA","39.5296329","-119.8138027","http://nodeschool.io/reno","","","Colin Loretz","colinloretz","colinloretz","",""
-"Saint Petersburg","Russia","59.9342802","30.3350986","http://nodeschool.io/spb","","","Marinin Tim","marinintim","marinintim","","marinintim@gmail.com"
 "San Francisco (California)","USA","37.7749295","-122.4194155","http://www.nodeschool.io/sanfrancisco","https://ti.to/nodeschoolsf/international-day-may-23rd","","Lydia Katsamberis","llkats","llkats","",""
 "San Jose","Costa Rica","9.9280694","-84.0907246","https://github.com/nodeschool/costarica","http://www.meetup.com/costaricajs/events/222357068/","","Gabo Esquivel","gaboesquivel","gaboesquivel","",""
 "Santiago","Chile","-33.4691199","-70.641997","http://www.noders.cl","","","Felipe Torres Sepulveda","forres","forres.ftorres","fforres","felipe.torressepulveda@gmail.com"
