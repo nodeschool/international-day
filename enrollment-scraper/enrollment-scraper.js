@@ -25,9 +25,15 @@ var geocoderProvider = "google";
 var httpAdapter = "https";
 
 var extra = {
-    apiKey: process.env["GEOCODER_KEY"] || "",
+    apiKey: process.argv[2] || "",
     formatter: null
 };
+
+if (!extra.apiKey) {
+    console.log("Please pass a Google Maps API key as a first argument.")
+    process.exit(1)
+}
+
 
 var geocoder = require("node-geocoder")(geocoderProvider, httpAdapter, extra);
 var cache = {};
