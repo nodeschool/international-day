@@ -5,4 +5,4 @@ if [ $# -lt 1 ]; then
     exit 1
 fi
 
-GEOCODER_KEY=$1 node enrollment-scraper.js | tee output.csv
+GEOCODER_KEY=$1 node enrollment-scraper.js

@@ -93,7 +93,7 @@ function geocode(name, callback) {
             return;
         }
 
-        callback(err, { lat: res[0].latitude, lonl: res[0].longitude });
+        callback(err, { lat: res[0].latitude, lon: res[0].longitude });
     });
 }
 
