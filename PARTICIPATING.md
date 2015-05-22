@@ -33,7 +33,7 @@ Setup:
 
 1. Visit https://appear.in/nodeschool
 2. Knock to enter
-3. @iancrowther, @martinheidegger or @a0viedo will let you in :-)
+3. [@iancrowther](http://github.com/iancrowther), [@martinheidegger](http://github.com/martinheidegger) or [@a0viedo](http://github.com/a0viedo) will let you in :-)
 
 * Extra points for screen recording and committing the video
 
@@ -54,7 +54,6 @@ Optionally it would be nice to have:
 - Talking heads style shots of the attendees at the end saying what they thought of the event.
 - Shots over people leaving at the end
 
-
 ## Social Media
 Encourage your attendees to tweet, post pictures and small videos to Instagram with the hashtag #nodeschool.
 
@@ -68,7 +67,7 @@ The [stickers](https://github.com/nodeschool/international-day/tree/2015/Sticker
 It's a bit late for it but [here's a shirt design](http://www.bluecotton.com/share_display.html?u=1&s=1879054&x=1&r=9.06263673286052) if you want to order one as a keepsake. [Action shots](https://github.com/nodeschool/international-day/issues/44#issuecomment-104020133).
 
 ## Contact
-If you are having any issues during the event, please contact one of the event (organisers)[https://github.com/nodeschool/international-day/blob/2015/ORGANISERS.md]
+If you are having any issues during the event, please contact one of the event [organisers](https://github.com/nodeschool/international-day/blob/2015/ORGANISERS.md)
 
 ### Enrollment
 - Enroll with your chapter in [issue#8](https://github.com/nodeschool/international-day/issues/8)
