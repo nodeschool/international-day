@@ -7,10 +7,6 @@ The participation of each chapter is voluntary, no person has to attend the inte
 - If the major language in your country is not english you have to translate the code of conduct and other imporant information to this language.
 - Add your logo to the [hexdex](http://nodeschool.io/hexdex.html) so its easier for us to make a nice site
 
-# Suggestions
-
-Also we have set of ideas to help chapters plan their events for [international day](http://nodeschool.io/international-day/)
-
 ## Rollcall
 In order for you attendees to appear on the international rollcall, each chapter must add its attendees to the [international-day team](https://github.com/orgs/nodeschool/teams/international-day).  We will use the github api to render an attendee rollcall on the website.
 
