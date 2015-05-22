@@ -19,6 +19,18 @@ In order for you attendees to appear on the international rollcall, each chapter
 - Take a group photo!
 - If there is anyone in your community with sound/audio/video expertise, ask them to come and interview attendees. Upload your video to youtube afterwards and share it with the nodeschool/organizers repository so we can include it in a NodeSchool International Day short film.
 
+How to make a hangout:
+
+1. You introduce the other chapter quickly
+2. The chapter owner talks short (<=5min) about what they will do at their chapter
+3. The chapter takes you on the main screen, so everybody at his chapter sees you
+4. He introduces you to his chapter
+5. The chapter owner takes the camera to show the venue and everybody from the other chapter say together “HI!”
+6. You take the camera through our venue and everybody from your chapter say together “HI!"
+7. Then I take it off the main screen
+8. (ONLY If the other chapter also has presentation screen with speakers!) You talk 5 minutes about your chapter
+
+
 ## Stickers
 The [stickers](https://github.com/nodeschool/international-day/tree/2015/Stickers) have been prepared and are ready to send to you printer. Enjoy! (PS.: You can also order it internationally [at hexi.pics]( https://hexi.pics/items/aa621a0d29b88cab04f188aeb98788a9))
 
@@ -54,5 +66,5 @@ Suggest more ideas to include on this list in [this thread](https://github.com/n
 - Enroll with your chapter in [issue#8](https://github.com/nodeschool/international-day/issues/8)
 - Create an event sign-up page by May 1st using any given event site (for example: [Ti.to](https://ti.to/), [Meetup](http://www.meetup.com/), [EventBrite](https://www.eventbrite.com), [Connpass](http://connpass.com/) or  [Doorkeeper](https://www.doorkeeper.jp/)) or on your own site and [tell us about it](https://github.com/nodeschool/international-day/issues/22)
 - The event site **has to** have a location that tells people how to access it, a time to start and end. If you have limited space (usually the case) you have to write that down and make sure that its known beforehand. The event does not need to be free but may not exceed a price of 10usd and may not discriminate against anyone.
-- 
+
 Note: After enrollment the owner will be added to the [international-day-group ](https://github.com/orgs/nodeschool/teams/international-day). This is to makes sure that we are able to notify you through github if needed (check your github notifications)
