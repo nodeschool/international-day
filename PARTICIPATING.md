@@ -8,7 +8,7 @@ The participation of each chapter is voluntary, no person has to attend the inte
 - Add your logo to the [hexdex](http://nodeschool.io/hexdex.html) so its easier for us to make a nice site
 
 ## Rollcall
-In order for you attendees to appear on the international rollcall, each chapter must add its attendees to the [international-day team](https://github.com/orgs/nodeschool/teams/international-day).  We will use the github api to render an attendee rollcall on the website.
+In order for you attendees to appear on the international rollcall, each chapter must add its attendees to the [international-day team](https://github.com/orgs/nodeschool/teams/international-day-rollcall-2015).  We will use the github api to render an attendee rollcall on the website.
 
 ## Data Collection
 It would be awesome if you could fill out this: https://docs.google.com/forms/d/1Pg8QS09IggOsH8etXK7zDUqglobHBFD0OJvP5za2MwU/viewform
