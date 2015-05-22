@@ -61,8 +61,14 @@ Encourage your attendees to tweet, post pictures and small videos to Instagram w
 ## Your Ideas?
 Suggest more ideas to include on this list in [this thread](https://github.com/nodeschool/international-day/issues/12)
 
+## Stickers
+The [stickers](https://github.com/nodeschool/international-day/tree/2015/Stickers) have been prepared and are ready to send to you printer. Enjoy! (PS.: You can also order it internationally [at hexi.pics]( https://hexi.pics/items/aa621a0d29b88cab04f188aeb98788a9))
 
-## PAST ITEMS
+## Shirt
+It's a bit late for it but [here's a shirt design](http://www.bluecotton.com/share_display.html?u=1&s=1879054&x=1&r=9.06263673286052) if you want to order one as a keepsake. [Action shots](https://github.com/nodeschool/international-day/issues/44#issuecomment-104020133).
+
+## Contact
+If you are having any issues during the event, please contact one of the event (organisers)[https://github.com/nodeschool/international-day/blob/2015/ORGANISERS.md]
 
 ### Enrollment
 - Enroll with your chapter in [issue#8](https://github.com/nodeschool/international-day/issues/8)
@@ -70,9 +76,3 @@ Suggest more ideas to include on this list in [this thread](https://github.com/n
 - The event site **has to** have a location that tells people how to access it, a time to start and end. If you have limited space (usually the case) you have to write that down and make sure that its known beforehand. The event does not need to be free but may not exceed a price of 10usd and may not discriminate against anyone.
 
 Note: After enrollment the owner will be added to the [international-day-group ](https://github.com/orgs/nodeschool/teams/international-day). This is to makes sure that we are able to notify you through github if needed (check your github notifications)
-
-### Stickers
-The [stickers](https://github.com/nodeschool/international-day/tree/2015/Stickers) have been prepared and are ready to send to you printer. Enjoy! (PS.: You can also order it internationally [at hexi.pics]( https://hexi.pics/items/aa621a0d29b88cab04f188aeb98788a9))
-
-### Shirt
-It's a bit late for it but [here's a shirt design](http://www.bluecotton.com/share_display.html?u=1&s=1879054&x=1&r=9.06263673286052) if you want to order one as a keepsake. [Action shots](https://github.com/nodeschool/international-day/issues/44#issuecomment-104020133).
