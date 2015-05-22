@@ -24,6 +24,7 @@ var concat = require("concat-stream");
 var geocoderProvider = "google";
 var httpAdapter = "https";
 
+
 var extra = {
     apiKey: process.argv[2] || "",
     formatter: null
@@ -34,6 +35,14 @@ if (!extra.apiKey) {
     process.exit(1)
 }
 
+var GITHUB_KEY = process.argv[3] || ""
+
+if (!GITHUB_KEY) {
+    console.log("Please pass a Github API Key as second argument")
+    process.exit(1)
+}
+
+var github = require("octonode").client(GITHUB_KEY);
 
 var geocoder = require("node-geocoder")(geocoderProvider, httpAdapter, extra);
 var cache = {};
@@ -160,13 +169,6 @@ function parseComments(events, comments) {
 
     async.mapLimit(comments, 10, createChapter.bind(null, events), function (err, chapters) {
         fs.writeFileSync(CACHE_FILE_NAME, JSON.stringify(cache));
-        chapters = chapters.sort(function (a, b) {
-            if (!a) return !b ? 0 : 1;
-            if (!b) return -1;
-            if (a.name > b.name) return 1;
-            if (b.name > a.name) return -1;
-            return 0;
-        });
 
         var scheduleStream = fs.createReadStream("./international-nodeschool-schedule.csv");
         scheduleStream.setEncoding("utf8")
@@ -184,7 +186,20 @@ function parseComments(events, comments) {
                         break;
                     }
                 };
+                var start = chapter["start-time"]
+                  , zone = chapter["time-zone"]
+                  , time = []
+
+                if (start && zone) {
+                    chapter.start = new Date("Sat May 23 2015 " + start + ":00 " + zone)
+                }
                 return chapter
+            }).sort(function (a, b) {
+                if (a.start > b.start)
+                    return 1;
+                else if(a.start < b.start)
+                    return -1;
+                return 0;
             }), { objectMode: true, header: true, columns: [
                 "city",
                 "country",
@@ -213,64 +228,23 @@ function parseComments(events, comments) {
 }
 
 function loadEventSignups() {
-    var ISSUE = 22;
-
-    https.get({
-        hostname: "api.github.com",
-        port: 443,
-        path: util.format("/repos/%s/%s/issues/%d/comments?per_page=100", OWNER, REPO, ISSUE),
-        method: "GET",
-        headers: {
-            "User-Agent": util.format("enrollment-scraper@%s", settings.version)
-        }
-    }, function (response) {
-        if (response.statusCode >= 300) {
-            throw new Error("[EE] Unexpected status code: " + response.statusCode + " | " + response.statusMessage);
+    github.issue(OWNER + '/' + REPO, 22).comments(0, 200, function (err, events) {
+        if (err >= 300) {
+            throw new Error("[EE] Unexpected err: " + err);
         }
 
-        response.pipe(concat(function (content) {
-            var json;
-
-            try {
-                json = JSON.parse(content);
-            } catch (error) {
-                throw new Error("[EE] JSON syntax error: " + error + "\n" + content);
-            }
-
-            loadComments(parseEvents(json));
-        }));
+        loadComments(parseEvents(events));
     }).on("error", function (error) {
         throw new Error("[EE] " + error);
     });
 }
 
 function loadComments(events) {
-    var ISSUE = 8;
-
-    https.get({
-        hostname: "api.github.com",
-        port: 443,
-        path: util.format("/repos/%s/%s/issues/%d/comments?per_page=100", OWNER, REPO, ISSUE),
-        method: "GET",
-        headers: {
-            "User-Agent": util.format("enrollment-scraper@%s", settings.version)
+    github.issue(OWNER + '/' + REPO, 8).comments(0, 200, function (err, comments) {
+        if (err) {
+            throw new Error("[EE] Unexpected error: " + err);
         }
-    }, function (response) {
-        if (response.statusCode >= 300) {
-            throw new Error("[EE] Unexpected status code: " + response.statusCode + " | " + response.statusMessage);
-        }
-
-        response.pipe(concat(function (content) {
-            var json;
-
-            try {
-                json = JSON.parse(content);
-            } catch (error) {
-                throw new Error("[EE] JSON syntax error: " + error + "\n" + content);
-            }
-
-            parseComments(events, json);
-        }));
+        parseComments(events, comments);
     }).on("error", function (error) {
         throw new Error("[EE] " + error);
     });

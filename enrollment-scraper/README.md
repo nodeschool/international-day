@@ -3,7 +3,7 @@
 ## How to run it?
 
 1. `npm install`
-2. `npm run scrape -- YOUR-GOOGLE-MAPS-API-KEY`
+2. `npm run scrape -- YOUR-GOOGLE-MAPS-API-KEY YOUR-GITHUB-KEY`
 
 ## Contributors
 

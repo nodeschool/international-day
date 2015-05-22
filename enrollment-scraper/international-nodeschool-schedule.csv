@@ -2,7 +2,7 @@ city,country,start-time,end-time,time-zone
 Buenos Aires,Argentina,10:00,17:00,UTC-03:00
 Belo Horizonte,Brazil,09:00,17:00,UTC-03:00
 Montevideo,Uruguay,11:00,15:00,UTC-03:00
-Medellín,Colombia,14:00,?,UTC-05:00
+Medellín,Colombia,14:00,24:00,UTC-05:00
 Pereira,Colombia,09:00,17:00,UTC-05:00
 Manizales,Colombia,14:00,18:00,UTC-05:00
 Toronto,Canada,13:00,16:00,UTC-05:00
@@ -11,7 +11,7 @@ Western Massachusetts (MA),USA,14:30,21:00,UTC-05:00
 Manizales,Colombia,14:00,18:00,UTC-05:00
 San Jose,Costa Rica,09:00,13:00,UTC-06:00
 Mexico City,Mexico,11:00,15:00,UTC-06:00
-Monterrey,México,?,?,UTC-06:00
+Monterrey,México,00:00,24:00,UTC-06:00
 Dallas (Texas),USA,18:30,21:30,UTC-06:00
 Provo (Utah),USA,15:00,17:00,UTC-07:00
 Edmonton,Canada,12:00,16:00,UTC-07:00
@@ -20,7 +20,6 @@ Vancouver,Canada,12:00,16:00,UTC-08:00
 Reno,USA,09:00,17:00,UTC-08:00
 San Francisco (California),USA,13:00,17:00,UTC-08:00
 Seattle (WA),USA,13:00,16:00,UTC-08:00
-Saint Petersburg,Russia,?,?,UTC-08:00
 Honolulu (Hawaii),USA,13:00,17:00,UTC-10:00
 London,UK,10:00,15:00,UTC+00:00
 Oxford,UK,10:00,21:00,UTC+00:00
@@ -29,7 +28,7 @@ Lisbon,Portugal,09:00,18:30,UTC+00:00
 Milan,Italy,15:00,18:00,UTC+01:00
 Katowice (Silesia),Poland,09:00,17:00,UTC+01:00
 Wrocław,Poland,10:00,17:00,UTC+01:00
-Hradec Králové,Czech Republic,09:00,?,UTC+01:00
+Hradec Králové,Czech Republic,09:00,24:00,UTC+01:00
 Paris,France,10:00,18:30,UTC+01:00
 Stuttgart,Germany,11:00,19:00,UTC+01:00
 Berlin,Germany,11:00,19:00,UTC+01:00
@@ -39,4 +38,4 @@ Dhaka,Bangladesh,10:00,17:00,UTC+06:00
 Chiang Mai,Thailand,15:00,18:00,UTC+07:00
 Osaka,Japan,11:00,19:00,UTC+09:00
 Tokyo,Japan,13:30,17:30,UTC+09:00
-Melbourne,Australia,?,?,UTC+10:00
+Melbourne,Australia,00:00,24:00,UTC+10:00
