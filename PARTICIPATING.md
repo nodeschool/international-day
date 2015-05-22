@@ -22,6 +22,9 @@ In order for you attendees to appear on the international rollcall, each chapter
 ## Stickers
 The [stickers](https://github.com/nodeschool/international-day/tree/2015/Stickers) have been prepared and are ready to send to you printer. Enjoy! (PS.: You can also order it internationally [at hexi.pics]( https://hexi.pics/items/aa621a0d29b88cab04f188aeb98788a9))
 
+## Shirt
+It's a bit late for it but [here's a shirt design](http://www.bluecotton.com/share_display.html?u=1&s=1879054&x=1&r=9.06263673286052) if you want to order one as a keepsake. [Action shots](https://github.com/nodeschool/international-day/issues/44#issuecomment-104020133).
+
 ## Minifilm
 In order to be a part of the mini film, you must take a group photo with your chapter, or record a short "Hello from [you chapter name]" and commit it to [Video](https://github.com/nodeschool/international-day/tree/2015/Video)
 
