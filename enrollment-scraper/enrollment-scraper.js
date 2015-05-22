@@ -195,6 +195,9 @@ function parseComments(events, comments) {
                 }
                 return chapter
             }).sort(function (a, b) {
+                if (!a.start || !b.start) {
+                    return 0;
+                }
                 if (a.start.getTime() > b.start.getTime())
                     return 1;
                 else if(a.start.getTime() < b.start.getTime())
