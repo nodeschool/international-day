@@ -28,6 +28,21 @@ It's a bit late for it but [here's a shirt design](http://www.bluecotton.com/sha
 ## Minifilm
 In order to be a part of the mini film, you must take a group photo with your chapter, or record a short "Hello from [you chapter name]" and commit it to [Video](https://github.com/nodeschool/international-day/tree/2015/Video)
 
+Please try to get videos showing:
+
+- Establishing shot of the venue from outside of the building
+- A few shots inside of people mingling and talking
+- Some shots walking around the room using the Hyperlapse app if possible
+- Group shot of everyone shouting "Hello from xxx" in english.
+- Group shot of everyone shouting "We love Nodeschool" in their native language
+- Panning shots of the room with everyone on laptops
+
+Optionally it would be nice to have:
+- Talking heads style shots of the attendees as they arrive saying what they are hoping to get out of the event.
+- Talking heads style shots of the attendees at the end saying what they thought of the event.
+- Shots over people leaving at the end
+
+
 ## Social Media
 Encourage your attendees to tweet, post pictures and small videos to Instagram with the hashtag #nodeschool.
 
