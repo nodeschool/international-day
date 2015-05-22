@@ -58,7 +58,7 @@ Optionally it would be nice to have:
 Encourage your attendees to tweet, post pictures and small videos to Instagram with the hashtag #nodeschool.
 
 ## Your Ideas?
-Suggest more ideas to include on this list in [this thread](https://github.com/nodeschool/international-day/issues/12)
+Suggest more ideas to include on this list in [this thread](https://github.com/nodeschool/international-day/issues)
 
 ## Stickers
 The [stickers](https://github.com/nodeschool/international-day/tree/2015/Stickers) have been prepared and are ready to send to you printer. Enjoy! (PS.: You can also order it internationally [at hexi.pics]( https://hexi.pics/items/aa621a0d29b88cab04f188aeb98788a9))
