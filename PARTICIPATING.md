@@ -29,6 +29,14 @@ How to make a hangout:
 7. Then I take it off the main screen
 8. (ONLY If the other chapter also has presentation screen with speakers!) You talk 5 minutes about your chapter
 
+Setup:
+
+1. Visit https://appear.in/nodeschool
+2. Knock to enter
+3. @iancrowther, @martinheidegger or @a0viedo will let you in :-)
+
+* Extra points for screen recording and committing the video
+
 ## Minifilm
 In order to be a part of the mini film, you must take a group photo with your chapter, or record a short "Hello from [you chapter name]" and commit it to [Video](https://github.com/nodeschool/international-day/tree/2015/Video)
 
