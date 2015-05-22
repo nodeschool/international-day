@@ -10,6 +10,9 @@ The participation of each chapter is voluntary, no person has to attend the inte
 ## Rollcall
 In order for you attendees to appear on the international rollcall, each chapter must add its attendees to the [international-day team](https://github.com/orgs/nodeschool/teams/international-day).  We will use the github api to render an attendee rollcall on the website.
 
+## Data Collection
+It would be awesome if you could fill out this: https://docs.google.com/forms/d/1Pg8QS09IggOsH8etXK7zDUqglobHBFD0OJvP5za2MwU/viewform
+
 ## Hangout
 - Pick a chapter far away from you on the globe and set up a time to do a google hangout during the day (like [this](https://github.com/nodeschool/international-day/issues/14) or [this](https://github.com/nodeschool/international-day/issues/13))
 - Take a group photo!
