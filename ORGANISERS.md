@@ -34,13 +34,6 @@ Please review the [schedule](https://github.com/nodeschool/international-day/blo
 
 (TimeZone Map)[http://www.convertit.com/Go/ConvertIt/World_Time/Time_Zones_Map_Large.ASP]
 
-## Mini Film (Issue #9)
-
-- write script - @tomfrew
-- editing - @tomfrew
-- defining chapter spec
-- update participating with chapter requirements - @grabbou
-
-## Stickers 
-
-- publish the sticker spec so chapters can order - @finnp (already done!)
+## Mini Film [#9](http://github.com/nodeschool/international-day/issues/9)
+### Tom Frew
+- Twitter: @tomfrew
