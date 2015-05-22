@@ -1,17 +1,11 @@
 # Requirements
 
 The participation of each chapter is voluntary, no person has to attend the international day. However when you do there are a few things that you should follow to make it a enjoyable experience (and a day to remember).
-
-- Enroll with your chapter in [issue#8](https://github.com/nodeschool/international-day/issues/8)
-- Create an event sign-up page by May 1st using any given event site (for example: [Ti.to](https://ti.to/), [Meetup](http://www.meetup.com/), [EventBrite](https://www.eventbrite.com), [Connpass](http://connpass.com/) or  [Doorkeeper](https://www.doorkeeper.jp/)) or on your own site and [tell us about it](https://github.com/nodeschool/international-day/issues/22)
-- The event site **has to** have a location that tells people how to access it, a time to start and end. If you have limited space (usually the case) you have to write that down and make sure that its known beforehand. The event does not need to be free but may not exceed a price of 10usd and may not discriminate against anyone.
 - The person that enrolled the chapter (owner) becomes responsible to uphold  [the code of conduct](https://github.com/nodeschool/international-day/blob/2015/code_of_conduct_en.md) and as such has to leave his/her contact information for the duration of the event and up to two weeks after that.
 - The owner - or a mentor that can take over the responsibility - has to be at the event for the whole specified duration in the event page.
 - During the time you specified in the event site the owner should be reachable using the given skype account (given during enrollment)
 - If the major language in your country is not english you have to translate the code of conduct and other imporant information to this language.
 - Add your logo to the [hexdex](http://nodeschool.io/hexdex.html) so its easier for us to make a nice site
-
-Note: After enrollment the owner will be added to the [international-day-group ](https://github.com/orgs/nodeschool/teams/international-day). This is to makes sure that we are able to notify you through github if needed (check your github notifications)
 
 # Suggestions
 
@@ -36,3 +30,11 @@ Encourage your attendees to tweet, post pictures and small videos to Instagram w
 
 ## Your Ideas?
 Suggest more ideas to include on this list in [this thread](https://github.com/nodeschool/international-day/issues/12)
+
+
+## Enrollment (done)
+- Enroll with your chapter in [issue#8](https://github.com/nodeschool/international-day/issues/8)
+- Create an event sign-up page by May 1st using any given event site (for example: [Ti.to](https://ti.to/), [Meetup](http://www.meetup.com/), [EventBrite](https://www.eventbrite.com), [Connpass](http://connpass.com/) or  [Doorkeeper](https://www.doorkeeper.jp/)) or on your own site and [tell us about it](https://github.com/nodeschool/international-day/issues/22)
+- The event site **has to** have a location that tells people how to access it, a time to start and end. If you have limited space (usually the case) you have to write that down and make sure that its known beforehand. The event does not need to be free but may not exceed a price of 10usd and may not discriminate against anyone.
+- 
+Note: After enrollment the owner will be added to the [international-day-group ](https://github.com/orgs/nodeschool/teams/international-day). This is to makes sure that we are able to notify you through github if needed (check your github notifications)
