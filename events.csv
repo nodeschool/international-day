@@ -20,6 +20,7 @@ city,country,lat,lon,chapter-url,event-url,hex-logo,owner,github,skype,twitter,e
 "Lahore","Pakistan","31.55460609999999","74.3571581","http://nodeschool.io/lahore","","","Usman Tahir","usmantahirr ","ch.usman.tahir","","ch.usman.tahir@gmail.com"
 "Las Vegas (Nevada)","USA","36.1699412","-115.1398296","http://nodeschool.io/vegas","","","Pawel Szymczykowski","makenai ","makenaizo","","makenai@gmail.com"
 "Lisbon","Portugal","38.7222524","-9.1393366","https://github.com/nodeschool/lisbon","http://www.meetup.com/require-lx/events/221544407/","","Daniela Borges","sericaia","sericaia","",""
+"London","United Kingdom","51.5302527","-0.1032153","https://github.com/nodeschool/london","https://ti.to/nodeschool/international-nodeschool-day-london","","Orlando","orliesaurus","","orliesaurus","orlando@opensauce.it"
 "Madrid","Spain","40.4167754","-3.7037902","http://nodeschool.io/madrid","http://www.meetup.com/Node-js-Madrid/events/222023643/","","Alejandro Fernández","alexfernandez","chenno","","alexfernandeznpm@gmail.com"
 "Manizales","Colombia","5.067132","-75.518288","http://nodeschool.io/manizales","http://www.meetup.com/ManizalesJS/events/222353574/","","Germán Mauricio Muñoz","gmauricio","gmauricio","","gmauricio.munozatgmail.com"
 "Medellín","Colombia","6.230833","-75.59055599999999","https://github.com/nodeschool/medellin","http://www.meetup.com/MedellinJS/events/222554849/","","Julian Duque","julianduque ","julian.shemtov","","julianduquej@gmail.com"
