@@ -1,6 +1,6 @@
 # international-day 
 
-The landing page for the international nodeschool day
+## http://nodeschool.io/international-day/
 
 [![Join the chat at https://gitter.im/nodeschool/international-day](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/nodeschool/international-day?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
