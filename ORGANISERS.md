@@ -6,7 +6,7 @@ Please contact @iancrowther for any questions or queries you may have.
 - Skype: iancrowther1
 - Github: @iancrowther
 - Twitter: @iancrowther
-- Email: ian[at]iancrowther[dot]co[dot]uk
+- Email: ian[at]nexttick[dot]io
 
 ## Timezone Owners
 Please review the [schedule](https://github.com/nodeschool/international-day/blob/2015/international-nodeschool-schedule.csv) to see which timezone your chapter is assigned too and who is your point of contact on the day.
