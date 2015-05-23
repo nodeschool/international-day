@@ -18,11 +18,13 @@ Please review the [schedule](https://github.com/nodeschool/international-day/blo
 - Twitter: @a0viedo
 - Email: alejandro.oviedo.g[at]gmail[dot]com
 
-## Oli Evans 
-#### (who is supposed to be on holiday! Any ~UTC-8 residents free to take over? Let me know.)
+## Oli Evans / Rich Trott
+#### (who is supposed to be on holiday! Any ~UTC-8 residents free to take over? Let Oli know.)
 ### Timezones UTC-07:00 ~ UTC-10:00
-- Twitter: [olizilla](https://twitter.com/olizilla)
-- Gitter: [olizilla](https://gitter.im/olizilla)
+- Twitter: [olizilla](https://twitter.com/olizilla) 
+- Twitter: [trott](https://twitter.com/trott)
+- Gitter: [olizilla](https://gitter.im/olizilla) 
+- Gitter: [trott](https://twitter.com/trott)
 
 ##Ian Crowther
 ### Timezones UTC+00:00 ~ UTC+02:00
