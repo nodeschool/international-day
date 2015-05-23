@@ -6,7 +6,6 @@ Medellín,Colombia,14:00,24:00,UTC-05:00
 Pereira,Colombia,09:00,17:00,UTC-05:00
 Manizales,Colombia,14:00,18:00,UTC-05:00
 Toronto,Canada,13:00,16:00,UTC-05:00
-Bainbridge Island (WA),USA,09:00,12:00,UTC-05:00
 Western Massachusetts (MA),USA,14:30,21:00,UTC-05:00
 Manizales,Colombia,14:00,18:00,UTC-05:00
 San Jose,Costa Rica,09:00,13:00,UTC-06:00
@@ -15,6 +14,7 @@ Monterrey,México,00:00,24:00,UTC-06:00
 Dallas (Texas),USA,18:30,21:30,UTC-06:00
 Provo (Utah),USA,15:00,17:00,UTC-07:00
 Edmonton,Canada,12:00,16:00,UTC-07:00
+Bainbridge Island (WA),USA,09:00,12:00,UTC-08:00
 Kamloops,Canada,13:00,16:00,UTC-08:00
 Vancouver,Canada,12:00,16:00,UTC-08:00
 Reno,USA,09:00,17:00,UTC-08:00
