@@ -23,8 +23,10 @@ Please review the [schedule](https://github.com/nodeschool/international-day/blo
 ### Timezones UTC-07:00 ~ UTC-10:00
 - Twitter: [olizilla](https://twitter.com/olizilla) 
 - Twitter: [trott](https://twitter.com/trott)
+- Twitter: [rosskukulinski](https://twitter.com/rosskukulinski)
 - Gitter: [olizilla](https://gitter.im/olizilla) 
 - Gitter: [trott](https://twitter.com/trott)
+- Gitter: [rosskukulinski](https://twitter.com/rosskukulinski)
 
 ##Ian Crowther
 ### Timezones UTC+00:00 ~ UTC+02:00
