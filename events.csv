@@ -1,41 +1,41 @@
 city,country,lat,lon,chapter-url,event-url,hex-logo,owner,github,skype,twitter,email,start-time,end-time,time-zone
 Portland (Oregon),USA,45.5230622,-122.6764816,http://nodeschool.io/pdx,http://calagator.org/events/1250468498,,Max Ogden,maxogden,,,mogden@gmail.com,00:00,24:00,UTC+00:00
-Taipei,Taiwan,25.0329694,121.5654177,http://nodeschool.io/taipei,http://nodeschool.kktix.cc/events/867150f7-0ae723,,Fred Chien,cfsghost ,,,cfsghost@gmail.com,10:00,18:00,UTC+08:00
 Osaka,Japan,34.6937378,135.5021651,http://nodeschool.io/osaka,https://nodeschool.doorkeeper.jp/events/23614,,Martin Heidegger,martinheidegger ,mastakaneda ,,martin.heidegger@gmail.com,11:00,19:00,UTC+09:00
+Taipei,Taiwan,25.0329694,121.5654177,http://nodeschool.io/taipei,http://nodeschool.kktix.cc/events/867150f7-0ae723,,Fred Chien,cfsghost ,,,cfsghost@gmail.com,10:00,18:00,UTC+08:00
 Dhaka,Bangladesh,23.810332,90.4125181,http://nodeschool.io/dhaka,http://www.meetup.com/Dhaka-JS/events/222354776/,,Azharul Islam,az7arul,az7arul,,az7arul@gmail.com,10:00,17:00,UTC+06:00
 Tokyo,Japan,35.7090259,139.7319925,http://nodeschool.io/tokyo,http://nodejs.connpass.com/event/14741/,,Yosuke Furukawa,yosuke-furukawa,yosuke_furukawa,,yosuke.furukawa@gmail.com,13:30,17:30,UTC+09:00
 Monterrey,México,25.6866142,-100.3161126,http://nodeschool.io/mty,https://ti.to/nodeschoolmty/international-day,,Diego Ponce,diegowifi,d1360_ponce,,diegoponce@outlook.com,00:00,24:00,UTC-06:00
-Hradec Králové,Czech Republic,50.2103605,15.825211,http://nodeschool.io/hradec-kralove/,http://srazy.info/nodeschool/5323,,Miroslav Bajtoš,bajtos,,,,09:00,24:00,UTC+01:00
 Chiang Mai,Thailand,18.787747,98.99312839999999,http://nodeschool.io/chiang-mai,https://www.facebook.com/events/493163420832014/,,Amine Mouafik,kytwb,amine.mouafik,,,15:00,18:00,UTC+07:00
+Hradec Králové,Czech Republic,50.2103605,15.825211,http://nodeschool.io/hradec-kralove/,http://srazy.info/nodeschool/5323,,Miroslav Bajtoš,bajtos,,,,09:00,24:00,UTC+01:00
 Katowice (Silesia),Poland,50.26489189999999,19.0237815,https://nodeschool.io/silesia,http://www.meetup.com/NodeSchool-Silesia/events/222231203/,,Wojtek Gawroński,afronski,afronski,afronski,afronski@gmail.com,09:00,17:00,UTC+01:00
-Wrocław,Poland,51.1078852,17.0385376,https://github.com/nodeschool/wroclaw,http://www.meetup.com/NodeSchool-Wroclaw/events/222231656/,,Mike Grabowski,grabbou ,grabbou,,grabbou@gmail.com,10:00,17:00,UTC+01:00
 Madrid,Spain,40.4167754,-3.7037902,http://nodeschool.io/madrid,http://www.meetup.com/Node-js-Madrid/events/222023643/,,Alejandro Fernández,alexfernandez,chenno,,alexfernandeznpm@gmail.com,11:00,14:00,UTC+02:00
 Lisbon,Portugal,38.7222524,-9.1393366,https://github.com/nodeschool/lisbon,http://www.meetup.com/require-lx/events/221544407/,,Daniela Borges,sericaia,sericaia,,,09:00,18:30,UTC+00:00
 Paris,France,48.856614,2.3522219,http://nodeschool.github.io/paris/,http://www.meetup.com/NodeSchool-Paris/events/221935923/,,Christophe Porteneuve,tdd,tddian,,tdd@tddsworld.com,10:00,18:30,UTC+01:00
-Berlin,Germany,52.52000659999999,13.404954,http://github.com/nodeschool/berlin,https://ti.to/nodeschool-berlin/8,,Finn Pauls,finnp ,finn-hat-skype,finnpauls,derfinn@gmail.com,11:00,19:00,UTC+01:00
-Stuttgart,Germany,48.7758459,9.1829321,http://nodeschool.io/stuttgart/,https://ti.to/nodeschool-stuttgart/1,,Kentaro Wakayama,kwakayama ,,wakayamakentaro,kentaro@wakayama.io,11:00,19:00,UTC+01:00
-Oxford,UK,51.7520209,-1.2577263,http://jsoxford.com,http://www.meetup.com/JSOxford/events/222015476/,,Ryan Brooks,spikeheap,ryan.p.brooks,,,10:00,21:00,UTC+00:00
+Wrocław,Poland,51.1078852,17.0385376,https://github.com/nodeschool/wroclaw,http://www.meetup.com/NodeSchool-Wroclaw/events/222231656/,,Mike Grabowski,grabbou ,grabbou,,grabbou@gmail.com,10:00,17:00,UTC+01:00
 London,UK,51.5073509,-0.1277583,https://github.com/nodeschool/london,https://ti.to/nodeschool/international-nodeschool-day-london,,Ian Crowther,iancrowther,iancrowther1,iancrowther,,10:00,15:00,UTC+00:00
+Stuttgart,Germany,48.7758459,9.1829321,http://nodeschool.io/stuttgart/,https://ti.to/nodeschool-stuttgart/1,,Kentaro Wakayama,kwakayama ,,wakayamakentaro,kentaro@wakayama.io,11:00,19:00,UTC+01:00
+Berlin,Germany,52.52000659999999,13.404954,http://github.com/nodeschool/berlin,https://ti.to/nodeschool-berlin/8,,Finn Pauls,finnp ,finn-hat-skype,finnpauls,derfinn@gmail.com,11:00,19:00,UTC+01:00
+Oxford,UK,51.7520209,-1.2577263,http://jsoxford.com,http://www.meetup.com/JSOxford/events/222015476/,,Ryan Brooks,spikeheap,ryan.p.brooks,,,10:00,21:00,UTC+00:00
 Seville,Spain,37.3890924,-5.9844589,http://nodeschool.io/seville,http://www.meetup.com/Bitnami-Sevilla/events/222186033/,,Beltran Rueda,beltran-rubo,beltranrubo,beltranrubo,,13:30,15:00,UTC+02:00
 Belo Horizonte,Brazil,-19.9166813,-43.9344931,http://nodeschool.io/belo-horizonte/,http://even.tc/nodeschool-bh,,Paulo Pires,paulohp,paulo.manguara,,tarallo.php@gmail.com,09:00,17:00,UTC-03:00
 Buenos Aires,Argentina,-34.6037232,-58.3815931,https://github.com/nodeschool/buenosaires,https://ti.to/nodeschool/international-day-ba,,Alejandro Oviedo,a0viedo ,alejandro.og,,alejandro.oviedo.g@gmail.com,10:00,17:00,UTC-03:00
 Melbourne,Australia ([CampJS](http://campjs.com/)),-37.814107,144.96328,http://nodeschool.io/melbourne,http://campjs.com/,,Tim Oxley,timoxley,secoif,,secoif@gmail.com,,,
 Dublin,Ireland,53.3498053,-6.2603097,http://nodeschool.io/dublin,http://www.meetup.com/Nodeschool-Dublin-Meetup/events/221183159/,,Anton Whalley,no9,Bass11Dark ,,,14:00,17:30,UTC+00:00
-Bainbridge Island (WA),USA,47.6262081,-122.5212448,http://islandjs.org,http://www.meetup.com/IslandJS-Nodeschool/events/222090027/,,Andrew Waterman,awaterma,andrew.waterman,,awaterma@awaterma.net,09:00,12:00,UTC-05:00
 Pereira,Colombia,4.814278,-75.694558,http://nodeschool.io/pereira,http://nodeschool.io/pereira,,Daniel Aristizabal,cronopio,cronopio40,,aristizabal.daniel@gmail.com,09:00,17:00,UTC-05:00
 Montevideo,Uruguay,-34.9011127,-56.16453139999999,http://nodeschool.github.io/montevideo/,https://ti.to/sophilabs/nodeschool-23th-may-2015,,Pablo Ricco,pricco,pricco82,,pricco@gmail.com,11:00,15:00,UTC-03:00
 Milan,Italy,45.4654219,9.1859243,http://nodeschool.io/milan,https://www.eventbrite.it/e/biglietti-nodeschool-italy-milano-16784771704,,Matteo Collina,mcollina,,,matteo.collina@gmail.com,15:00,18:00,UTC+01:00
 San Jose,Costa Rica,9.9280694,-84.0907246,https://github.com/nodeschool/costarica,http://www.meetup.com/costaricajs/events/222357068/,,Gabo Esquivel,gaboesquivel,gaboesquivel,,,09:00,13:00,UTC-06:00
 Santa Marta,Colombia,11.241944,-74.20527799999999,http://nodeschool.io/santamarta,https://www.eventbrite.com/e/nodeschool-santa-marta-2014-tickets-14415524221,,Pedro E. Romero,pedroromn,,peyorom,pedroromn@gmail.com,08:00,12:00,UTC-08:00
+Bainbridge Island (WA),USA,47.6262081,-122.5212448,http://islandjs.org,http://www.meetup.com/IslandJS-Nodeschool/events/222090027/,,Andrew Waterman,awaterma,andrew.waterman,,awaterma@awaterma.net,09:00,12:00,UTC-08:00
 Mexico City,Mexico,19.4326077,-99.133208,http://nodeschool.io/mexicocity,http://www.meetup.com/ChelaJS/events/222073841/,,Jeduan Cornejo,jeduan,jeduan,,jeduan@gmail.com,11:00,15:00,UTC-06:00
 Toronto,Canada,43.653226,-79.3831843,http://nodeschool.io/toronto,https://ti.to/nodeschool-toronto/international-nodeschool-day-2015,,Jeff Jewiss,jeffjewiss,jeffjewiss,,jeffjewiss@gmail.com,13:00,16:00,UTC-05:00
-Manizales,Colombia,5.067132,-75.518288,http://nodeschool.io/manizales,http://www.meetup.com/ManizalesJS/events/222353574/,,Germán Mauricio Muñoz,gmauricio,gmauricio,,gmauricio.munozatgmail.com,14:00,18:00,UTC-05:00
 Medellín,Colombia,6.230833,-75.59055599999999,https://github.com/nodeschool/medellin,http://www.meetup.com/MedellinJS/events/222031784,,Julian Duque,julianduque ,julian.shemtov,,julianduquej@gmail.com,14:00,24:00,UTC-05:00
+Manizales,Colombia,5.067132,-75.518288,http://nodeschool.io/manizales,http://www.meetup.com/ManizalesJS/events/222353574/,,Germán Mauricio Muñoz,gmauricio,gmauricio,,gmauricio.munozatgmail.com,14:00,18:00,UTC-05:00
 Western Massachusetts (MA),USA,42.1638053,-72.5559413,https://github.com/nodeschool/western-mass/,https://ti.to/nodeschool-western-massachusetts/nodeschool-international-day-2015/,,Sequoia McDowell,sequoia ,sequoia.mcdowell ,,sequoia.mcdowell@gmail.com,14:30,21:00,UTC-05:00
 Vancouver,Canada,49.2827291,-123.1207375,https://github.com/nodeschool/vancouver,https://ti.to/nodeschool-vancouver/2015-05-23,,Luke Vivier,lvivier,lukevivier,,luke@vivier.ca,12:00,16:00,UTC-08:00
-San Francisco (California),USA,37.7749295,-122.4194155,http://www.nodeschool.io/sanfrancisco,https://ti.to/nodeschoolsf/international-day-may-23rd,,Lydia Katsamberis,llkats,llkats,,,13:00,17:00,UTC-08:00
 Seattle (WA),USA,47.6062095,-122.3320708,https://github.com/nodeschool/seattle ,http://www.meetup.com/Seattle-NodeSchool/events/221984469/,,Farrin Reid,blakmatrix,,,blakmatrix@gmail.com,13:00,16:00,UTC-08:00
 Kamloops,Canada,50.674522,-120.3272674,https://github.com/nodeschool/kamloops,https://www.picatic.com/nodeschoolintlkamloops,,Jonathan Bowers,jonotron ,,thejonotron,jonotron@gmail.com,13:00,16:00,UTC-08:00
+San Francisco (California),USA,37.7749295,-122.4194155,http://www.nodeschool.io/sanfrancisco,https://ti.to/nodeschoolsf/international-day-may-23rd,,Lydia Katsamberis,llkats,llkats,,,13:00,17:00,UTC-08:00
 Provo (Utah),USA,40.2338438,-111.6585337,http://nodeschool.io/provo,http://meetu.ps/2J6W23,,Michael A. Jackson,majgis,,,majgis@gmail.com,15:00,17:00,UTC-07:00
 Honolulu (Hawaii),USA,21.3069444,-157.8583333,https://github.com/nodeschool/honolulu,https://www.facebook.com/events/387996224729628/,,George Lee,keokilee,,keokilee,keoki.lee@gmail.com,13:00,17:00,UTC-10:00
 Dallas (Texas),USA,32.7766642,-96.79698789999999,http://nodeschool.io/dallas,http://www.meetup.com/Nodeschool-Dallas/events/219510533/,,Steven Gangstead,gangstead,steven.gangstead,gangstead,steven@gangstead.com,18:30,21:30,UTC-06:00
