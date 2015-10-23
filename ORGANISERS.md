@@ -9,38 +9,41 @@ Please contact @iancrowther for any questions or queries you may have.
 - Email: ian[at]nexttick[dot]io
 
 ## Timezone Owners
-Please review the [schedule](https://github.com/nodeschool/international-day/blob/2015/enrollment-scraper/international-nodeschool-schedule.csv) to see which timezone your chapter is assigned too and who is your point of contact on the day.
+Please review the [tbd] to see which timezone your chapter is assigned too and who is your point of contact on the day.
 
-##Alejandro Oviedo
+## [Name]
 ### Timezones UTC-03:00 ~ UTC-06:00
-- Github: @a0viedo
-- Skype: alejandro.og
-- Twitter: @a0viedo
-- Email: alejandro.oviedo.g[at]gmail[dot]com
+- Github:
+- Skype:
+- Twitter:
+- Email:
 
-## Oli Evans / Rich Trott
-#### (who is supposed to be on holiday! Any ~UTC-8 residents free to take over? Let Oli know.)
+## [Name]
 ### Timezones UTC-07:00 ~ UTC-10:00
-- Twitter: [olizilla](https://twitter.com/olizilla) 
-- Twitter: [trott](https://twitter.com/trott)
-- Twitter: [rosskukulinski](https://twitter.com/rosskukulinski)
-- Gitter: [olizilla](https://gitter.im/olizilla) 
-- Gitter: [trott](https://twitter.com/trott)
-- Gitter: [rosskukulinski](https://twitter.com/rosskukulinski)
+- Github:
+- Skype:
+- Twitter:
+- Email:
 
-##Ian Crowther
+## Ian Crowther
 ### Timezones UTC+00:00 ~ UTC+02:00
 - Skype: iancrowther1
 - Github: @iancrowther
 - Twitter: @iancrowther
-- Email: ian[at]iancrowther[dot]co[dot]uk
+- Email: ian[at]nexttick[dot]io
 
-##Martin Heidegger
+## [Name]
 ### Timezones UTC+06:00 ~ UTC+10:00
-- Github: martinheidegger
+- Github:
+- Skype:
+- Twitter:
+- Email:
 
 (TimeZone Map)[http://www.convertit.com/Go/ConvertIt/World_Time/Time_Zones_Map_Large.ASP]
 
-## Mini Film Owner 
-### Tom Frew
-- Twitter: @tomfrew
+## Media Editing
+### [Name]
+- Github:
+- Skype:
+- Twitter:
+- Email:
