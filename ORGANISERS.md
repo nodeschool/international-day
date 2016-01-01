@@ -32,6 +32,13 @@ Please review the [tbd] to see which timezone your chapter is assigned too and w
 - Twitter: @iancrowther
 - Email: ian[at]nexttick[dot]io
 
+## Christophe Porteneuve
+### Timezones UTC+00:00 ~ UTC+02:00
+- Skype: tddian
+- Github: @tdd
+- Twitter: @porteneuve
+- Email: christophe[at]delicious-insights[dot]com
+
 ## [Name]
 ### Timezones UTC+06:00 ~ UTC+10:00
 - Github:
