@@ -13,6 +13,9 @@ Please read [PARTICIPATING.md](https://github.com/nodeschool/international-day/b
 ## Timezone champions
 Please read [ORGANISERS.md](https://github.com/nodeschool/international-day/blob/2016/ORGANISERS.md) to understand what responsibilities are required
 
+## Contributing
+The landing page uses no build tools, its just plain 'ol html & css.  it can be found on the branch ```gh-pages``
+
 ## Say Hello!
 [Tweet](http://twitter.com/nodeschool) using the #hashtag #nodeschool-day
 
