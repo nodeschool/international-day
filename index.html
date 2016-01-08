@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection"/>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
     <link type="text/css" rel="stylesheet" href="style.css" media="screen,projection"/>
   </head>
   <body>
@@ -17,11 +18,18 @@
 
     <nav class="light-blue" role="navigation" id="navigation">
       <div class="nav-wrapper container">
-        <ul class="left">
+        <a href="#" data-activates="mobile-menu" class="button-collapse"><i class="material-icons">menu</i></a>
+        <ul class="left hide-on-med-and-down">
           <li><a href="https://github.com/nodeschool/international-day" target="_blank">Github<img src="images/github.png" alt="" class="social-icon" /></a></li>
           <li><a href="https://gitter.im/nodeschool/international-day" target="_blank"><i class="material-icons right">chat</i>Gitter</a></li>
         </ul>
-        <ul class="right">
+        <ul class="right hide-on-med-and-down">
+          <li><a href="https://drive.google.com/folderview?id=0B1E3fBFiidMXLWhuaWU1TUM5Rmc&usp=sharing" target="_blank"><i class="material-icons right">backup</i>Upload Media</a></li>
+          <li><a href="http://goo.gl/forms/7jB01kGihs" target="_blank"><i class="material-icons right">feedback</i>2016 Feedback</a></li>
+        </ul>
+        <ul class="side-nav" id="mobile-menu">
+          <li><a href="https://github.com/nodeschool/international-day" target="_blank">Github<img src="images/github-dark.png" alt="" class="social-icon" /></a></li>
+          <li><a href="https://gitter.im/nodeschool/international-day" target="_blank"><i class="material-icons right">chat</i>Gitter</a></li>
           <li><a href="https://drive.google.com/folderview?id=0B1E3fBFiidMXLWhuaWU1TUM5Rmc&usp=sharing" target="_blank"><i class="material-icons right">backup</i>Upload Media</a></li>
           <li><a href="http://goo.gl/forms/7jB01kGihs" target="_blank"><i class="material-icons right">feedback</i>2016 Feedback</a></li>
         </ul>
@@ -320,7 +328,9 @@
           <div class="col l3 s12">
             <h5 class="black-text">Connect</h5>
             <ul>
-              <li><a class="black-text" href="https://github.com/nodeschool/international-day" target="_blank"><img src="" alt="" />Github</a></li>
+              <li>
+                <a class="black-text" href="https://github.com/nodeschool/international-day" target="_blank"><img src="" alt="" />Github</a>
+              </li>
               <li><a class="black-text" href="https://twitter.com/nodeschool" target="_blank">Twitter</a></li>
               <li><a class="black-text" href="http://gitter.im/nodeschool/international-day" target="_blank">Gitter</a></li>
             </ul>
@@ -334,5 +344,15 @@
         </div>
       </div>
     </footer>
+
+    <!-- Compiled and minified JavaScript -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+      $(".button-collapse").sideNav();
+    });
+    </script>
+
   </body>
 </html>
