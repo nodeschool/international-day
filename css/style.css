@@ -4,7 +4,7 @@ html {
 
 #banner {
   border-top: 3px solid black;
-  background-image: url(images/international-day-bg.jpg);
+  background-image: url(/images/international-day-bg.jpg);
   background-position: center;
   background-size: cover;
   color: white;
@@ -12,17 +12,20 @@ html {
   padding-bottom: 4em;
   text-shadow: 1px 1px 10px #333333;
 }
+
 #banner img {
   display: block;
   margin: 0 auto;
   margin-right: auto;
   width: 20%;
 }
+
 #banner h3 {
   font-size: 3em;
   margin-top: 0;
   margin-bottom: 0;
 }
+
 #banner time {
   font-size: 1.5em;
   font-weight: 100;
@@ -32,6 +35,11 @@ html {
   margin: 0 0 -6px 15px;
 }
 
+.side-nav .social-icon {
+  float: right;
+  padding: 17px 2px 0 0;
+}
+
 .header {
   line-height: 150%;
 }
@@ -39,6 +47,7 @@ html {
 .card .card-title {
   margin-top: 0;
 }
+
 .card .chapter-logo {
   width: 100px;
 }
