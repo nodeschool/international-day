@@ -53,5 +53,22 @@ html {
 }
 
 .rollcall {
+  margin: 0;
   list-style: inherit;
+}
+
+.rollcall li {
+  border: 1px solid transparent;
+  border-radius: 3px;
+  box-sizing: border-box;
+  cursor: default;
+  margin: 2px 0;
+  padding: 5px;
+  transition: all .25s ease-in-out;
+}
+
+.rollcall li:hover {
+  background: #fdd835;
+  border-color: orange;
+  letter-spacing: 1px;
 }
