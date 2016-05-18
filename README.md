@@ -8,8 +8,6 @@ http://nodeschool.io/international-day
 ## Chapter organisers
 Please read [PARTICIPATING.md](https://github.com/nodeschool/international-day/blob/2016/PARTICIPATING.md) to get the most out of the day
 
-**Enrollment Closes on May 1st at 18:00 GMT**
-
 ## Timezone champions
 Please read [ORGANISERS.md](https://github.com/nodeschool/international-day/blob/2016/ORGANISERS.md) to understand what responsibilities are required
 
