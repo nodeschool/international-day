@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html ng-app='myApp' lang="en">
 
 <head>
   <title>Nodeschool International Day - 2016</title>
@@ -73,14 +73,15 @@
         </div>
       </div>
     </div>
-    <div class="section" id="chapters">
-      <div class="row">
-        <div class="col s12 m3">
-          <a href="http://nodeschool.io/london" class="black-text" target="_blank">
+    <div class="section" id="chapters" ng-controller="MainCtrl" ng-cloak>
+
+      <div class="row" ng-repeat="row in chapterData"><!-- Start Row -->
+        <div class="col s12 m3" ng-repeat="chapter in row"><!-- Chapter -->
+          <a href="{{chapter.url}}" class="black-text" target="_blank">
             <div class="card center hoverable">
               <div class="card-content">
-                <h5 class="card-title">London</h5>
-                <img class="chapter-logo" src="https://raw.githubusercontent.com/nodeschool/nodeschool.github.io/source/images/nodeschool-london-official.png" alt="" />
+                <h5 class="card-title">{{chapter.name}}</h5>
+                <img class="chapter-logo" src="{{chapter.icon}}" alt="Nodeschool {{chapter.name}} Logo">
               </div>
               <div class="card-action center">
                 <span>Visit Chapter</span>
@@ -88,46 +89,8 @@
             </div>
           </a>
         </div>
-        <div class="col s12 m3">
-          <a href="http://goo.gl/forms/839wkXq0SI" target="_blank">
-            <div class="card center hoverable">
-              <div class="card-content">
-                <h5 class="card-title grey-text">Available</h5>
-                <img class="chapter-logo" src="images/placeholder.png" alt="Nodeschool Placeholder Logo" />
-              </div>
-              <div class="card-action grey-text">
-                <span>Enrol Now</span>
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="col s12 m3">
-          <a href="http://goo.gl/forms/839wkXq0SI" target="_blank">
-            <div class="card center hoverable">
-              <div class="card-content">
-                <h5 class="card-title grey-text">Available</h5>
-                <img class="chapter-logo" src="images/placeholder.png" alt="Nodeschool Placeholder Logo" />
-              </div>
-              <div class="card-action grey-text">
-                <span>Enrol Now</span>
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="col s12 m3">
-          <a href="http://goo.gl/forms/839wkXq0SI" target="_blank">
-            <div class="card center hoverable">
-              <div class="card-content">
-                <h5 class="card-title grey-text">Available</h5>
-                <img class="chapter-logo" src="images/placeholder.png" alt="Nodeschool Placeholder Logo" />
-              </div>
-              <div class="card-action grey-text">
-                <span>Enrol Now</span>
-              </div>
-            </div>
-          </a>
-        </div>
-      </div>
+      </div><!-- End -->
+
     </div>
   </div>
   <section id="2015">
@@ -139,167 +102,14 @@
       <hr>
       <br>
       <br>
-      <div class="row">
-        <div class="col s6 m4 l2">
+      <div class="row" ng-controller="MainCtrl" ng-cloak>
+
+        <div class="col s6 m4 l2" ng-repeat="column in lastAttendees">
           <ul class="rollcall">
-            <li>daveskull81</li>
-            <li>LupDre</li>
-            <li>Trott</li>
-            <li>pvrbek</li>
-            <li>dinodsaurus</li>
-            <li>shime</li>
-            <li>bcobanovfoi</li>
-            <li>SimonSun1988</li>
-            <li>PolarBearAndrew</li>
-            <li>iancrowther</li>
-            <li>piccoloaiutante</li>
-            <li>Sequoia</li>
-            <li>filtercake</li>
-            <li>VladTheLad</li>
-            <li>sas05</li>
-            <li>derwebcoder</li>
-            <li>sebastian301082</li>
-            <li>HerrBertling</li>
-            <li>herzi</li>
-            <li>Salzig</li>
-            <li>robin-drexler</li>
-            <li>trevorah</li>
-            <li>SomeoneWeird</li>
+            <li ng-repeat="person in column">{{person}}</li>
           </ul>
         </div>
-        <div class="col s6 m4 l2">
-          <ul class="rollcall">
-            <li>sidorares</li>
-            <li>sericaia</li>
-            <li>iled</li>
-            <li>foliveira</li>
-            <li>zcarlos</li>
-            <li>nneves</li>
-            <li>dhenriques</li>
-            <li>JSFernandes</li>
-            <li>ghost</li>
-            <li>kytwb</li>
-            <li>armno</li>
-            <li>aikordek</li>
-            <li>chester1000</li>
-            <li>jengguru</li>
-            <li>aimmango</li>
-            <li>rburns</li>
-            <li>rogr</li>
-            <li>Sparragus</li>
-            <li>jurasec</li>
-            <li>alecsGarza</li>
-            <li>robextrem</li>
-            <li>sarazat</li>
-            <li>AlfredoBejarano</li>
-          </ul>
-        </div>
-        <div class="col s6 m4 l2">
-          <ul class="rollcall">
-            <li>leoolmos</li>
-            <li>andygnewman</li>
-            <li>swooop</li>
-            <li>joaopaulopp</li>
-            <li>almssp</li>
-            <li>joshpitzalis</li>
-            <li>TheBenji</li>
-            <li>msmichellegar</li>
-            <li>adriankelly</li>
-            <li>tomasz-potanski</li>
-            <li>anniva</li>
-            <li>sandagolcea</li>
-            <li>borellvi</li>
-            <li>alanshaw</li>
-            <li>jmpp</li>
-            <li>nerik</li>
-            <li>martinjeannot</li>
-            <li>supertanuki</li>
-            <li>alain75007</li>
-            <li>UnbearableBear</li>
-            <li>marie-ototoi</li>
-            <li>donaminos</li>
-            <li>stephane71</li>
-          </ul>
-        </div>
-        <div class="col s6 m4 l2">
-          <ul class="rollcall">
-            <li>rumesh</li>
-            <li>sophietk</li>
-            <li>Andromed</li>
-            <li>iteuss</li>
-            <li>arnaudbreton</li>
-            <li>alexandreferreirafr</li>
-            <li>hmaalmi</li>
-            <li>fagossa</li>
-            <li>yassinedoghri</li>
-            <li>yanning92</li>
-            <li>y9mo</li>
-            <li>csu6</li>
-            <li>micabe</li>
-            <li>dicaormu</li>
-            <li>vjlock</li>
-            <li>dylaw</li>
-            <li>pepinpin</li>
-            <li>hmore</li>
-            <li>masterct</li>
-            <li>jeanpaulpollue</li>
-            <li>faisalmohd</li>
-            <li>Nahal-Islam</li>
-            <li>SdShadab</li>
-          </ul>
-        </div>
-        <div class="col s6 m4 l2">
-          <ul class="rollcall">
-            <li>amuntasim</li>
-            <li>ishtiaque23</li>
-            <li>imranfarid7890</li>
-            <li>hsleonis</li>
-            <li>shafayeatsumit</li>
-            <li>naimrajib07</li>
-            <li>devfaisal</li>
-            <li>faiyazahmed</li>
-            <li>FuadRafiq</li>
-            <li>himaloy</li>
-            <li>tanvirraj</li>
-            <li>mkawsar</li>
-            <li>selimppc</li>
-            <li>mones-cse</li>
-            <li>mahsin-islam</li>
-            <li>codeinfected</li>
-            <li>faizaalam</li>
-            <li>zhdzmn</li>
-            <li>prappo</li>
-            <li>newazsharif</li>
-            <li>junan</li>
-            <li>ProsantaChaki</li>
-            <li>bleedingpoem</li>
-          </ul>
-        </div>
-        <div class="col s6 m4 l2">
-          <ul class="rollcall">
-            <li>mofrubel</li>
-            <li>suzon007</li>
-            <li>imranabdurrahim</li>
-            <li>jeebonanowar</li>
-            <li>afronski</li>
-            <li>mmoczulski</li>
-            <li>galuszkak</li>
-            <li>sleaz0id</li>
-            <li>bdanek</li>
-            <li>kkoscielniak</li>
-            <li>marcinrog</li>
-            <li>awilczek</li>
-            <li>mandraszyk</li>
-            <li>MariuszGeo</li>
-            <li>martasap</li>
-            <li>pbocian</li>
-            <li>widmofazowe</li>
-            <li>bandraszyk</li>
-            <li>marckraw</li>
-            <li>kkarczmarczyk</li>
-            <li>frakti</li>
-          </ul>
-        </div>
+
       </div>
     </div>
   </section>
@@ -329,9 +139,14 @@
       </div>
     </div>
   </footer>
+
   <!-- Compiled and minified JavaScript -->
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+  <script type="text/javascript" src="js/app.js"></script>
+  <script type="text/javascript" src="js/mainCtrl.js"></script>
+  
   <!-- Necessary for the side-nav menu on mobile -->
   <script type="text/javascript">
   $(document).ready(function() {

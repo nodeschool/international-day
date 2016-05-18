@@ -46,10 +46,12 @@ html {
 
 .card .card-title {
   margin-top: 0;
+  line-height: 28px !important;
+  min-height: 2.5em;
 }
 
 .card .chapter-logo {
-  width: 100px;
+  height: 100px;
 }
 
 .rollcall {
