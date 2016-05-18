@@ -1,7 +1,7 @@
 # Nodeschool - International Day 2016
 ## Saturday 21st May 2016
 
-Over 24 hours, the NodeSchool community will come together and organize Nodeschool events all around the globe. #nodeschool #international-day
+Over 24 hours, the NodeSchool community will come together and organize Nodeschool events all around the globe. #nodeschool #nodeschoolday
 
 http://nodeschool.io/international-day
 
