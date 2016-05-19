@@ -62,90 +62,107 @@ angular.module('myApp').controller('MainCtrl', ['$scope', function($scope) {
   			url	:	"http://nodeschool.io/italy",
   			icon:	"images/icn-italy.png"
   		},
-  		chapter12:{
+      chapter12:{
+  			name: "Lahore",
+  			url	:	"http://nodeschool.io/Lahore",
+  			icon:	"images/icn-lahore.png"
+  		},
+  	},
+  	row4: {
+      chapter13:{
   			name: "Lisbon",
   			url	:	"http://www.meetup.com/require-lx/events/229064760",
   			icon:	"images/icn-lisbon.png"
-  		}
-  	},
-  	row4: {
-  		chapter13:{
+  		},
+  		chapter14:{
   			name: "London",
   			url	:	"https://github.com/nodeschool/london",
   			icon:	"images/icn-london.png"
   		},
-  		chapter14:{
+  		chapter15:{
+  			name: "Manizales",
+  			url	:	"http://nodeschool.io/manizales",
+  			icon:	"images/icn-manizales.png"
+  		},
+  		chapter16:{
   			name: "Mexico City",
   			url	:	"http://nodeschool.github.io/mexicocity",
   			icon:	"images/icn-mexicocity.png"
-  		},
-  		chapter15:{
+  		}
+  	},
+  	row5: {
+      chapter17:{
   			name: "New York",
   			url	:	"http://nodeschool.io/nyc",
   			icon:	"images/icn-newyork.png"
   		},
-  		chapter16:{
+  		chapter18:{
   			name: "Oakland",
   			url	:	"http://nodeschool.io/oakland",
   			icon:	"images/icn-oakland.png"
-  		}
-  	},
-  	row5: {
-  		chapter17:{
+  		},
+  		chapter19:{
   			name: "Pereira",
   			url	:	"http://nodeschool.io/pereira",
   			icon:	"images/icn-pereira.png"
   		},
-  		chapter18:{
+  		chapter20:{
   			name: "Raleigh-Durham",
   			url	:	"http://nodeschool.io/raleigh-durham",
   			icon:	"images/icn-raleigh.png"
-  		},
-  		chapter19:{
-  			name: "Reykjavik",
-  			url	:	"http://nodeschool.io/reykjavik",
-  			icon:	"images/icn-reykjavik.png"
-  		},
-  		chapter20:{
-  			name: "San Francisco",
-  			url	:	"http://nodeschool.io/sanfrancisco",
-  			icon:	"images/icn-sanfrancisco.png"
   		}
   	},
   	row6: {
   		chapter21:{
+  			name: "Reykjavik",
+  			url	:	"http://nodeschool.io/reykjavik",
+  			icon:	"images/icn-reykjavik.png"
+  		},
+  		chapter22:{
+  			name: "San Francisco",
+  			url	:	"http://nodeschool.io/sanfrancisco",
+  			icon:	"images/icn-sanfrancisco.png"
+  		},
+  		chapter23:{
   			name: "Tacoma",
   			url	:	"http://nodeschool.io/tacoma",
   			icon:	"images/icn-tacoma.png"
   		},
-  		chapter22:{
+  		chapter24:{
   			name: "Tokyo",
   			url	:	"http://nodeschool.io/tokyo",
   			icon:	"images/icn-tokyo.png"
-  		},
-  		chapter23:{
+  		}
+  	},
+  	row7: {
+      chapter25:{
   			name: "Toronto",
   			url	:	"http://nodeschool.io/toronto",
   			icon:	"images/icn-toronto.png"
   		},
-  		chapter24:{
+      chapter26:{
+  			name: "Vancouver",
+  			url	:	"http://nodeschool.io/vancouver",
+  			icon:	"images/icn-vancouver.png"
+  		},
+  		chapter27:{
   			name: "Washington DC",
   			url	:	"http://nodeschool.io/washingtondc",
   			icon:	"images/icn-washingtondc.png"
-  		}
-  	},
-  	row7: {
-  		chapter25:{
+  		},
+  		chapter28:{
   			name: "Western Mass",
   			url	:	"http://nodeschool.io/western-mass",
   			icon:	"images/icn-westernmass.png"
-  		},
-  		chapter26:{
+  		}
+  	},
+    row8: {
+      chapter29:{
   			name: "Zagreb",
   			url	:	"http://nodeschool.io/zagreb",
   			icon:	"images/icn-zagreb.png"
   		}
-  	}
+    }
   };
 
 
