@@ -101,63 +101,68 @@ angular.module('myApp').controller('MainCtrl', ['$scope', function($scope) {
   			url	:	"http://nodeschool.io/oakland",
   			icon:	"images/icn-oakland.png"
   		},
-  		chapter19:{
+      chapter19:{
+  			name: "Osaka",
+  			url	:	"http://nodeschool.io/osaka",
+  			icon:	"images/icn-osaka.png"
+  		},
+  		chapter20:{
   			name: "Pereira",
   			url	:	"http://nodeschool.io/pereira",
   			icon:	"images/icn-pereira.png"
-  		},
-  		chapter20:{
-  			name: "Raleigh-Durham",
-  			url	:	"http://nodeschool.io/raleigh-durham",
-  			icon:	"images/icn-raleigh.png"
   		}
   	},
   	row6: {
-  		chapter21:{
+      chapter21:{
+  			name: "Raleigh-Durham",
+  			url	:	"http://nodeschool.io/raleigh-durham",
+  			icon:	"images/icn-raleigh.png"
+  		},
+  		chapter22:{
   			name: "Reykjavik",
   			url	:	"http://nodeschool.io/reykjavik",
   			icon:	"images/icn-reykjavik.png"
   		},
-  		chapter22:{
+  		chapter23:{
   			name: "San Francisco",
   			url	:	"http://nodeschool.io/sanfrancisco",
   			icon:	"images/icn-sanfrancisco.png"
   		},
-  		chapter23:{
+  		chapter24:{
   			name: "Tacoma",
   			url	:	"http://nodeschool.io/tacoma",
   			icon:	"images/icn-tacoma.png"
-  		},
-  		chapter24:{
-  			name: "Tokyo",
-  			url	:	"http://nodeschool.io/tokyo",
-  			icon:	"images/icn-tokyo.png"
   		}
   	},
   	row7: {
       chapter25:{
+  			name: "Tokyo",
+  			url	:	"http://nodeschool.io/tokyo",
+  			icon:	"images/icn-tokyo.png"
+  		},
+      chapter26:{
   			name: "Toronto",
   			url	:	"http://nodeschool.io/toronto",
   			icon:	"images/icn-toronto.png"
   		},
-      chapter26:{
+      chapter27:{
   			name: "Vancouver",
   			url	:	"http://nodeschool.io/vancouver",
   			icon:	"images/icn-vancouver.png"
   		},
-  		chapter27:{
+  		chapter28:{
   			name: "Washington DC",
   			url	:	"http://nodeschool.io/washingtondc",
   			icon:	"images/icn-washingtondc.png"
-  		},
-  		chapter28:{
-  			name: "Western Mass",
-  			url	:	"http://nodeschool.io/western-mass",
-  			icon:	"images/icn-westernmass.png"
   		}
   	},
     row8: {
       chapter29:{
+  			name: "Western Mass",
+  			url	:	"http://nodeschool.io/western-mass",
+  			icon:	"images/icn-westernmass.png"
+  		},
+      chapter30:{
   			name: "Zagreb",
   			url	:	"http://nodeschool.io/zagreb",
   			icon:	"images/icn-zagreb.png"
