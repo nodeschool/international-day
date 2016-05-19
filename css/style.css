@@ -4,7 +4,7 @@ html {
 
 #banner {
   border-top: 3px solid black;
-  background-image: url(/images/international-day-bg.jpg);
+  background-image: url(../images/international-day-bg.jpg);
   background-position: center;
   background-size: cover;
   color: white;
@@ -73,4 +73,8 @@ html {
   background: #fdd835;
   border-color: orange;
   letter-spacing: 1px;
+}
+
+.page-footer{
+  margin-bottom: 0px;
 }
