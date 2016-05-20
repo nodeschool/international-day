@@ -107,7 +107,8 @@
 
   <!-- Compiled and minified JavaScript -->
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+  <script src="http://momentjs.com/downloads/moment.min.js"></script>
+  <script src="http://momentjs.com/downloads/moment-timezone-with-data.js"></script>
   <script type="text/javascript" src="js/tabletop.js"></script>
 
   <!-- Necessary for the side-nav menu on mobile -->
@@ -115,6 +116,21 @@
     $(document).ready(function() {
       $(".button-collapse").sideNav();
     });
+
+    function fixTime (value) {
+      if (/^[0-9]\:/.test(value)) {
+        value = '0' + value
+      }
+      if (/PM/.test(value)) {
+        var valueParts = value.split(':')
+        valueParts[0] = parseInt(valueParts[0], 10) + 12
+        value = valueParts.join(':')
+      }
+      value = value.replace(/(A|P)M/, '')
+      value = '2016-05-21 ' + value
+      return value
+    }
+
     var iconLookup = {
       bainbridge: 1,
       barcelona: 1,
@@ -158,7 +174,7 @@
           return names
         }, {})
         var lines = form.elements
-        lines
+        var chapters = lines
           .map(function (line) {
             var result = {}
             for (var name in line) {
@@ -170,14 +186,17 @@
             return result
           })
           .map(function (line) {
+            var tz = line[8]
             return {
               name: line[1],
               url: line[2],
               icon: line[3],
               signupURL: line[4],
-              start: line[6],
-              end: line[7],
-              tz: line[8]
+              _start: line[6],
+              start: moment.tz(fixTime(line[6]), tz),
+              _end: line[7],
+              end: moment.tz(fixTime(line[7]), tz),
+              tz: tz
             }
           })
           .map(function (chapter) {
@@ -187,23 +206,34 @@
             }
             return chapter
           })
-          .map(function (chapter) {
+          .sort(function (a, b) {
+            var aVal = a.start.valueOf()
+            var bVal = b.start.valueOf()
+            if (aVal > bVal) {
+              return 1
+            }
+            if (aVal < bVal) {
+              return -1
+            }
+            return 0
+          })
+        chapters.map(function (chapter) {
             return $('<div class="col s12 m3" ng-repeat="chapter in row">' +
-              '  <a href="' + chapter.url + '" class="black-text" target="_blank">' +
+              '  <a href="' + chapter.signupURL + '" class="black-text" target="_blank">' +
               '    <div class="card center hoverable">' +
               '      <div class="card-content">' +
               '        <h5 class="card-title">' + chapter.name + '</h5>' +
               '        <img class="chapter-logo" src="' + chapter.icon + '" alt="Nodeschool ' + chapter.name + ' Logo">' +
               '      </div>' +
               '      <div class="card-action center">' +
-              '        <span>Visit Chapter</span>' +
+              '        <span>Sign Up!</span>' +
+              '        <div class="time"></div>' + 
               '      </div>' +
               '    </div>' +
               '  </a>' +
               '</div>')
           })
           .reduce(function (rows, $chapter, nr) {
-          
             var key = 'row' + (((nr / 4) | 0) + 1)
             var $row = rows[key]
             if (!$row) {
@@ -213,9 +243,41 @@
             $row.append($chapter)
             return rows
           }, {})
+
+        $time = $('.time').toArray().map(function (node) {
+          return $(node)
+        })
+        function updateTimeDisplay() {
+          $time.forEach(function (node, nr) {
+            var chapter = chapters[nr]
+            var state = 'future'
+            var ended = chapter.end.fromNow()
+            var waiting = chapter.start.fromNow()
+            if (chapter.end < Date.now()) {
+              state = 'past'
+            } else if (chapter.start < Date.now()) {
+              state = 'now'
+            }
+            node
+              .toggleClass('now', state === 'now')
+              .toggleClass('past', state === 'past')
+              .toggleClass('future', state === 'future')
+
+            if (state === 'future') {
+              node.text('The event starts ' + waiting)
+            } else if (state === 'past') {
+              node.text('The event has ended ' + ended)
+            } else {
+              node.text('Now happening!')
+            }
+          })
+        }
+        setInterval(updateTimeDisplay, 1000)
+        updateTimeDisplay()
       }
     })
   </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
 </body>
 
 </html>
