@@ -125,7 +125,10 @@
       }
       if (/PM/.test(value)) {
         var valueParts = value.split(':')
-        valueParts[0] = parseInt(valueParts[0], 10) + 12
+        var pmTime = parseInt(valueParts[0], 10)
+        if (pmTime !== 12) {
+          valueParts[0] =  + 12 
+        }
         value = valueParts.join(':')
       }
       value = value.replace(/(A|P)M/, '')
