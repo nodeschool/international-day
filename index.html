@@ -73,24 +73,8 @@
         </div>
       </div>
     </div>
-    <div class="section" id="chapters" ng-controller="MainCtrl" ng-cloak>
-
-      <div class="row" ng-repeat="row in chapterData"><!-- Start Row -->
-        <div class="col s12 m3" ng-repeat="chapter in row"><!-- Chapter -->
-          <a href="{{chapter.url}}" class="black-text" target="_blank">
-            <div class="card center hoverable">
-              <div class="card-content">
-                <h5 class="card-title">{{chapter.name}}</h5>
-                <img class="chapter-logo" src="{{chapter.icon}}" alt="Nodeschool {{chapter.name}} Logo">
-              </div>
-              <div class="card-action center">
-                <span>Visit Chapter</span>
-              </div>
-            </div>
-          </a>
-        </div>
-      </div><!-- End -->
-
+    <div class="section" id="chapters">
+      Loading...
     </div>
   </div>
 
@@ -122,17 +106,115 @@
   </footer>
 
   <!-- Compiled and minified JavaScript -->
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
-  <script type="text/javascript" src="js/app.js"></script>
-  <script type="text/javascript" src="js/mainCtrl.js"></script>
+  <script type="text/javascript" src="js/tabletop.js"></script>
 
   <!-- Necessary for the side-nav menu on mobile -->
   <script type="text/javascript">
-  $(document).ready(function() {
-    $(".button-collapse").sideNav();
-  });
+    $(document).ready(function() {
+      $(".button-collapse").sideNav();
+    });
+    var iconLookup = {
+      bainbridge: 1,
+      barcelona: 1,
+      belgrade: 1,
+      bengaluru: 1,
+      berlin: 1,
+      buenosaires: 1,
+      costarica: 1,
+      dhaka: 1,
+      hermosillo: 1,
+      kolkata: 1,
+      italy: 1,
+      lahore: 1,
+      lisbon: 1,
+      london: 1,
+      manizales: 1,
+      mexicocity: 1,
+      newyork: 1,
+      oakland: 1,
+      osaka: 1,
+      pereira: 1,
+      raleigh: 1,
+      reykjavik: 1,
+      sanfrancisco: 1,
+      tacoma: 1,
+      tokyo: 1,
+      toronto: 1,
+      vancouver: 1,
+      washingtondc: 1,
+      westernmass: 1,
+      zagreb: 1
+    }
+
+    Tabletop.init( {
+      key: '1XHEtzfLpixcQpogVzNdm-sVVqw4YHJ1IBllCk5H9oyc',
+      callback: function(data, tabletop) {
+        $chapters = $('#chapters').empty()
+        var form = data['Form Responses 1']
+        var column_names = form.column_names.reduce(function (names, name, nr) {
+          names[name] = nr
+          return names
+        }, {})
+        var lines = form.elements
+        lines
+          .map(function (line) {
+            var result = {}
+            for (var name in line) {
+              var key = column_names[name]
+              if (typeof key !== 'undefined') {
+                result[key] = line[name]
+              }
+            }
+            return result
+          })
+          .map(function (line) {
+            return {
+              name: line[1],
+              url: line[2],
+              icon: line[3],
+              signupURL: line[4],
+              start: line[6],
+              end: line[7],
+              tz: line[8]
+            }
+          })
+          .map(function (chapter) {
+            var normalizedName = chapter.name.toLowerCase().replace(/ /g, '')
+            if (iconLookup[normalizedName]) {
+              chapter.icon = 'images/icn-' + normalizedName + '.png'
+            }
+            return chapter
+          })
+          .map(function (chapter) {
+            return $('<div class="col s12 m3" ng-repeat="chapter in row">' +
+              '  <a href="' + chapter.url + '" class="black-text" target="_blank">' +
+              '    <div class="card center hoverable">' +
+              '      <div class="card-content">' +
+              '        <h5 class="card-title">' + chapter.name + '</h5>' +
+              '        <img class="chapter-logo" src="' + chapter.icon + '" alt="Nodeschool ' + chapter.name + ' Logo">' +
+              '      </div>' +
+              '      <div class="card-action center">' +
+              '        <span>Visit Chapter</span>' +
+              '      </div>' +
+              '    </div>' +
+              '  </a>' +
+              '</div>')
+          })
+          .reduce(function (rows, $chapter, nr) {
+          
+            var key = 'row' + (((nr / 4) | 0) + 1)
+            var $row = rows[key]
+            if (!$row) {
+              $row = rows[key] = $('<div class="row"></div>')
+              $row.appendTo($chapters)
+            }
+            $row.append($chapter)
+            return rows
+          }, {})
+      }
+    })
   </script>
 </body>
 
