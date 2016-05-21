@@ -127,7 +127,7 @@
         var valueParts = value.split(':')
         var pmTime = parseInt(valueParts[0], 10)
         if (pmTime !== 12) {
-          valueParts[0] =  + 12 
+          valueParts[0] = pmTime + 12 
         }
         value = valueParts.join(':')
       }
@@ -169,6 +169,11 @@
       zagreb: 1
     }
 
+    function getTime(field, value, tz) {
+      var time = fixTime(value)
+      return moment.tz(time, tz)
+    }
+
     Tabletop.init( {
       key: '1XHEtzfLpixcQpogVzNdm-sVVqw4YHJ1IBllCk5H9oyc',
       callback: function(data, tabletop) {
@@ -202,9 +207,9 @@
               icon: line[3],
               signupURL: line[4],
               _start: line[6],
-              start: moment.tz(fixTime(line[6]), tz),
+              start: getTime('start', line[6], tz),
               _end: line[7],
-              end: moment.tz(fixTime(line[7]), tz),
+              end: getTime('end', line[7], tz),
               tz: tz
             }
           })
