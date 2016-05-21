@@ -59,6 +59,14 @@ html {
   list-style: inherit;
 }
 
+.now .card {
+  border: 5px solid #FAB428;
+}
+
+.past .card {
+  opacity: 0.5;
+}
+
 .rollcall li {
   border: 1px solid transparent;
   border-radius: 3px;

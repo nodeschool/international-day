@@ -231,7 +231,7 @@
             }
             return 0
           })
-        chapters.map(function (chapter) {
+        var $chapterItems = chapters.map(function (chapter) {
             return $('<div class="col s12 m3" ng-repeat="chapter in row">' +
               '  <a href="' + chapter.signupURL + '" class="black-text" target="_blank">' +
               '    <div class="card center hoverable">' +
@@ -240,14 +240,13 @@
               '        <img class="chapter-logo" src="' + chapter.icon + '" alt="Nodeschool ' + chapter.name + ' Logo">' +
               '      </div>' +
               '      <div class="card-action center">' +
-              '        <span>Sign Up!</span>' +
               '        <div class="time"></div>' + 
               '      </div>' +
               '    </div>' +
               '  </a>' +
               '</div>')
           })
-          .reduce(function (rows, $chapter, nr) {
+        $chapterItems.reduce(function (rows, $chapter, nr) {
             var key = 'row' + (((nr / 4) | 0) + 1)
             var $row = rows[key]
             if (!$row) {
@@ -272,17 +271,17 @@
             } else if (chapter.start < Date.now()) {
               state = 'now'
             }
-            node
+            $chapterItems[nr]
               .toggleClass('now', state === 'now')
               .toggleClass('past', state === 'past')
               .toggleClass('future', state === 'future')
 
             if (state === 'future') {
-              node.text('The event starts ' + waiting)
+              node.html('The event starts ' + waiting + '<br/><strong>Sign up now!</strong>')
             } else if (state === 'past') {
-              node.text('The event has ended ' + ended)
+              node.html('Ended ' + ended)
             } else {
-              node.text('Now happening!')
+              node.html('<strong>Now live!</strong><br />Ends ' + chapter.end.fromNow())
             }
           })
         }
