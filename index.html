@@ -190,6 +190,10 @@
             }
             return result
           })
+          .filter(function (line) {
+            // Cancelled
+            return line[21] !== 'Yes'
+          })
           .map(function (line) {
             var tz = line[8]
             return {
